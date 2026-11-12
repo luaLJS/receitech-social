@@ -1,0 +1,258 @@
+{
+ "regra": "nao repetir a mesma foto em menos de 30 dias; registrar cada uso em 'usos' com data e post",
+ "imagens": [
+  {
+   "arquivo": "banco-imagens/doce_bolo_2.jpg",
+   "categoria": "doce",
+   "produto": "bolo confeitado",
+   "fonte": "receiteria.com.br",
+   "tamanho": [
+    1200,
+    900
+   ],
+   "usos": []
+  },
+  {
+   "arquivo": "banco-imagens/doce_bolopote_2.jpg",
+   "categoria": "doce",
+   "produto": "bolo de pote",
+   "fonte": "dikadanaka.com.br",
+   "tamanho": [
+    1280,
+    960
+   ],
+   "usos": []
+  },
+  {
+   "arquivo": "banco-imagens/doce_brig_1.jpg",
+   "categoria": "doce",
+   "produto": "brigadeiro e beijinho",
+   "fonte": "judithbolos.com.br",
+   "tamanho": [
+    1080,
+    669
+   ],
+   "usos": []
+  },
+  {
+   "arquivo": "banco-imagens/doce_brownie_1.jpg",
+   "categoria": "doce",
+   "produto": "brownie",
+   "fonte": "guiadacozinha.com.br",
+   "tamanho": [
+    1087,
+    802
+   ],
+   "usos": []
+  },
+  {
+   "arquivo": "banco-imagens/doce_mesa_1.jpg",
+   "categoria": "doce",
+   "produto": "mesa de doces",
+   "fonte": "storage.alboom.ninja",
+   "tamanho": [
+    1200,
+    800
+   ],
+   "usos": []
+  },
+  {
+   "arquivo": "banco-imagens/doce_torta_2.jpg",
+   "categoria": "doce",
+   "produto": "torta de limão",
+   "fonte": "cdn.awsli.com.br",
+   "tamanho": [
+    1000,
+    1000
+   ],
+   "usos": []
+  },
+  {
+   "arquivo": "banco-imagens/natal_brownie_1.jpg",
+   "categoria": "natal",
+   "produto": "brownie",
+   "fonte": "images.aws.nestle.recipes",
+   "tamanho": [
+    1280,
+    853
+   ],
+   "usos": []
+  },
+  {
+   "arquivo": "banco-imagens/natal_cesta_1.jpg",
+   "categoria": "natal",
+   "produto": "cesta de Natal",
+   "fonte": "supabase (blog)",
+   "tamanho": [
+    1024,
+    1024
+   ],
+   "usos": []
+  },
+  {
+   "arquivo": "banco-imagens/natal_encomenda_1.jpg",
+   "categoria": "natal",
+   "produto": "caixa de doces de Natal",
+   "fonte": "docemaison.com.br",
+   "tamanho": [
+    829,
+    1244
+   ],
+   "usos": []
+  },
+  {
+   "arquivo": "banco-imagens/natal_encomenda_2.jpg",
+   "categoria": "natal",
+   "produto": "caixa de doces de Natal",
+   "fonte": "docemaison.com.br",
+   "tamanho": [
+    1280,
+    854
+   ],
+   "usos": []
+  },
+  {
+   "arquivo": "banco-imagens/natal_panetone_1.jpg",
+   "categoria": "natal",
+   "produto": "panetone trufado",
+   "fonte": "harald.com.br",
+   "tamanho": [
+    1302,
+    968
+   ],
+   "usos": []
+  },
+  {
+   "arquivo": "banco-imagens/salg_bolinha_1.jpg",
+   "categoria": "salgado",
+   "produto": "bolinha de queijo",
+   "fonte": "sabores-new.s3.amazonaws.com",
+   "tamanho": [
+    1400,
+    675
+   ],
+   "usos": []
+  },
+  {
+   "arquivo": "banco-imagens/salg_bolinha_2.jpg",
+   "categoria": "salgado",
+   "produto": "bolinha de queijo",
+   "fonte": "moinhoglobo.com.br",
+   "tamanho": [
+    1280,
+    1023
+   ],
+   "usos": []
+  },
+  {
+   "arquivo": "banco-imagens/salg_coxinha_1.jpg",
+   "categoria": "salgado",
+   "produto": "coxinha",
+   "fonte": "swiftbr.vteximg.com.br",
+   "tamanho": [
+    1000,
+    1000
+   ],
+   "usos": []
+  },
+  {
+   "arquivo": "banco-imagens/salg_coxinha_2.jpg",
+   "categoria": "salgado",
+   "produto": "coxinha",
+   "fonte": "nutrimassasesalgados.com",
+   "tamanho": [
+    1440,
+    1046
+   ],
+   "usos": []
+  },
+  {
+   "arquivo": "banco-imagens/salg_empada_1.jpg",
+   "categoria": "salgado",
+   "produto": "empadinha",
+   "fonte": "guiadacozinha.com.br",
+   "tamanho": [
+    1280,
+    720
+   ],
+   "usos": []
+  },
+  {
+   "arquivo": "banco-imagens/salg_empada_2.jpg",
+   "categoria": "salgado",
+   "produto": "empadinha",
+   "fonte": "receitatodahora.com.br",
+   "tamanho": [
+    1200,
+    900
+   ],
+   "usos": []
+  },
+  {
+   "arquivo": "banco-imagens/salg_esfiha_1.jpg",
+   "categoria": "salgado",
+   "produto": "esfiha aberta",
+   "fonte": "img.saborosos.com.br",
+   "tamanho": [
+    1280,
+    720
+   ],
+   "usos": []
+  },
+  {
+   "arquivo": "banco-imagens/salg_esfiha_2.jpg",
+   "categoria": "salgado",
+   "produto": "esfiha aberta",
+   "fonte": "guiadacozinha.com.br",
+   "tamanho": [
+    1280,
+    720
+   ],
+   "usos": []
+  },
+  {
+   "arquivo": "banco-imagens/salg_kibe_1.jpg",
+   "categoria": "salgado",
+   "produto": "quibe",
+   "fonte": "sabores-new.s3.amazonaws.com",
+   "tamanho": [
+    1400,
+    675
+   ],
+   "usos": []
+  },
+  {
+   "arquivo": "banco-imagens/salg_kibe_2.jpg",
+   "categoria": "salgado",
+   "produto": "quibe",
+   "fonte": "guiadacozinha.com.br",
+   "tamanho": [
+    1280,
+    720
+   ],
+   "usos": []
+  },
+  {
+   "arquivo": "banco-imagens/salg_minipizza_1.jpg",
+   "categoria": "salgado",
+   "produto": "mini pizza",
+   "fonte": "guiadacozinha.com.br",
+   "tamanho": [
+    1280,
+    720
+   ],
+   "usos": []
+  },
+  {
+   "arquivo": "banco-imagens/salg_risole_1.jpg",
+   "categoria": "salgado",
+   "produto": "risole",
+   "fonte": "receiteria.com.br",
+   "tamanho": [
+    1080,
+    1080
+   ],
+   "usos": []
+  }
+ ]
+}
