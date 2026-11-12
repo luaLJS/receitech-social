@@ -76,7 +76,12 @@
     1280,
     853
    ],
-   "usos": []
+   "usos": [
+    {
+     "data": "2026-11-12",
+     "post": "F2 lucro de dezembro"
+    }
+   ]
   },
   {
    "arquivo": "banco-imagens/natal_cesta_1.jpg",
@@ -253,6 +258,22 @@
     1080
    ],
    "usos": []
+  },
+  {
+   "arquivo": "banco-imagens/doce_brownie_2.jpg",
+   "categoria": "doce",
+   "produto": "brownie com casquinha",
+   "fonte": "receiteria.com.br",
+   "tamanho": [
+    1200,
+    900
+   ],
+   "usos": [
+    {
+     "data": "2026-11-12",
+     "post": "F1 brownie venda direta x iFood"
+    }
+   ]
   }
  ]
 }
