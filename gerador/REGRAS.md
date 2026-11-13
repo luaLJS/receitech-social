@@ -66,3 +66,8 @@ Regras definidas pela Luana. Seguir à risca. Em caso de dúvida, perguntar a el
 | 12/11 | C3 | Lista de compras "Necessário para a semana" | T4 | panetone, biscoitos, rabanada (recortes) + casadinho |
 | 12/11 | F2 | Aba Lucro: quanto sobra em dezembro | T9 navy | natal_brownie_1 |
 | 12/11 | F1 | Lucro por canal: brownie direta x iFood | T7 azul-claro | doce_brownie_2 |
+| 13/11 | C1 | Calendário de entregas (23 de dezembro) | T2 creme | natal_panetone_1 + miniaturas salg_empada_2, doce_torta_2 |
+| 13/11 | F1 | Pra resolver: encomenda atrasada | T6 céu (fotos retas) | doce_bolo_2 |
+| 13/11 | C2 | Cento de docinhos: embalagem no custo | T8 navy | doce_brig_1 |
+| 13/11 | F2 | Gastos do negócio | N12 | salg_coxinha_1 |
+| 13/11 | C3 | Perdas no estoque pronto (bolo de pote) | N10 azul | doce_bolopote_2 |
