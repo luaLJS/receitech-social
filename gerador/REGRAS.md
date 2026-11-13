@@ -1,0 +1,68 @@
+# Regras dos posts diários do Receitech (Instagram + TikTok)
+
+Regras definidas pela Luana. Seguir à risca. Em caso de dúvida, perguntar a ela.
+
+## Como falar com a Luana
+- Sempre numerar as respostas pelos subtópicos, sem repetir número nem letra na mesma resposta (ela responde citando o número).
+- Feedback maximamente crítico, sem suavizar. Linguagem direta, sem jargão.
+- Não usar travessão (—) nos textos.
+- Executar (publicar, agendar, enviar) só depois de um "OK" explícito dela.
+- Mostrar as imagens no canvas do Claude Design e também no chat.
+
+## Formato do dia
+- 5 posts por dia nas duas redes (mesma imagem, mesma legenda): 3 carrosséis + 2 fotos únicas.
+- Carrossel: tela 1 = gancho, tela 2 = tela do app no celular (mínimo 2 telas).
+- Foto única: frase direta + tela do app no celular + foto de comida. Precisa fazer sentido sozinha no feed.
+- Cada post é um par problema → funcionalidade do Receitech. Nunca prometer algo que o app não faz.
+- Janela de postagem 10h–22h. Horários padrão: 12h, 14h30, 17h, 19h, 21h.
+- Seguir a época do ano (nov/dez = Natal; depois Ano Novo, Páscoa, Dia das Mães, festa junina, Black Friday etc.).
+
+## Gancho (tela 1 dos carrosséis)
+- Aprovar o gancho com ela ANTES de montar a tela. Mandar 2 ou 3 opções por post, com a sua escolha e o porquê.
+- Voz da marca (empresa fazendo propaganda), nunca primeira pessoa.
+- Único objetivo: fazer passar pra tela 2. Abrir uma pergunta sem entregar a resposta.
+- Tem que atrair quem VENDE ou quer vender doces, salgados, bolos, nunca quem faz por hobby.
+- Apontar pra algo concreto que a tela 2 revela. A frase da tela 2 tem que responder a tela 1 (as duas têm que fazer sentido juntas).
+- Curto: cerca de duas frases curtas. Nem uma linha só, nem parágrafo. Sem "veja qual é" quando o chevron já faz o papel.
+- Variar o mecanismo todo dia, nunca a mesma fórmula.
+- Exemplos aprovados:
+  - "Antes de vender o próximo brigadeiro, veja isso."
+  - "Receber encomenda de Natal pelo WhatsApp tem um problema. E tem como evitar."
+  - "Encomenda de Natal fechada." / "Agora vem a parte que mais dá prejuízo ›"
+- Exemplos reprovados: afirmações que acabam em si mesmas ("o app já respondeu", "ninguém fez essa conta"), perguntas que a pessoa responde sozinha, desafios, estatísticas, "A lista do mercado da semana de Natal..." (qualquer um se identifica).
+- Chamada separada do resto quando existir ("E tem como evitar ›"), com o chevron dentro do texto, grande e pontudo. Sem a legenda "Passe pro lado". Logo não é obrigatório na tela 1.
+
+## Visual
+- Usar os 21 layouts do "Feed proposto" no canvas (T1–T9, N1–N12). A mesma referência nunca fica ao lado de outra igual no feed. Variar cor, posição, tipografia.
+- Cores da identidade: azul #3D86F7, navy #101828, azul-claro #EBF5FF, céu #CFE2FF, creme #F3EDE3.
+- Toda tela tem comida brasileira (doces, bolos, salgadinhos), apetitosa e reconhecível (ela reclamou de um brownie que não parecia brownie).
+- Foto sempre reta, nunca inclinada. Foto real colocada de forma simples. Nada de foto de fundo na tela inteira (na tela 1), polaroid, durex, print de bloco de notas, caixinhas de legenda, efeitos "pensados demais". Parecer post de uma pessoa de 20 anos, natural.
+- Mesmo peso de fonte nas linhas do gancho. Texto do tamanho do C2 ou menor.
+- A tela 1 vira capa no grid do perfil: não pode ficar feia nem estranha.
+- Nenhuma imagem se repete em menos de 30 dias (inclusive a foto do produto dentro da tela do app). Registrar cada uso em banco-imagens/index.json.
+- Nada de marca de terceiros visível nas fotos (logo, embalagem de outra marca, chocolate de marca).
+- Dois posts seguidos não podem ficar com a mesma composição (ex.: foto à esquerda + celular à direita nos dois). Inverter ou trocar de layout.
+- Emoji de Natal é bem-vindo na época.
+- Logo discreto na tela 2 é ok.
+
+## Telas do app
+- Geradas por código (gen.py), não prints. Fiéis ao app real (ver docs do projeto: aba Lucro, estoque, lista de compras, cardápio online, ficha do produto com canais Direta/iFood).
+- Números têm que fechar entre si (somas, margens). Evitar números impossíveis de comprar (ex.: 3,4 caixas) quando a frase promete "exatamente".
+- Datas sempre com mês ("15 a 21 de dezembro").
+
+## Legenda
+- Uma frase que continua o mistério, sem descrever o post nem soar como anúncio, + cerca de 5 hashtags (sempre #receitech).
+- TikTok: mesma legenda e hashtags; título (máx. 90 caracteres) = a frase do gancho.
+
+## Canvas
+- Canvas: "Criador de redes sociais — posts diários", slug 969fa822-132d-4a02-8ed1-b92e5c3beee1.
+- Apagar do canvas as versões rejeitadas. Deixar só o que vai ser usado + o Feed proposto com os 21 layouts.
+
+## Histórico de posts (atualizar a cada dia)
+| Data | Post | Tema | Layout | Foto |
+|---|---|---|---|---|
+| 12/11 | C1 | Preço do produto (brigadeiro) | estilo C1 | brigadeiro |
+| 12/11 | C2 | Cardápio online (Natal pelo WhatsApp) | faixa de foto | bolo de Natal |
+| 12/11 | C3 | Lista de compras "Necessário para a semana" | T4 | panetone, biscoitos, rabanada (recortes) + casadinho |
+| 12/11 | F2 | Aba Lucro: quanto sobra em dezembro | T9 navy | natal_brownie_1 |
+| 12/11 | F1 | Lucro por canal: brownie direta x iFood | T7 azul-claro | doce_brownie_2 |
