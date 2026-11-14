@@ -17,7 +17,15 @@ Regras definidas pela Luana. Seguir à risca. Em caso de dúvida, perguntar a el
 - Janela de postagem 10h–22h. Horários padrão: 12h, 14h30, 17h, 19h, 21h.
 - Seguir a época do ano (nov/dez = Natal; depois Ano Novo, Páscoa, Dia das Mães, festa junina, Black Friday etc.).
 
-## Gancho (tela 1 dos carrosséis)
+## Formato a partir de 14/11 (substitui as regras de gancho abaixo quando conflitar)
+- Objetivo dos posts: deixar a página do Receitech (Instagram e TikTok) mostrando o que o app faz, pra quem chega pelos vídeos das influenciadoras. Não é alcance.
+- Cada post fala de UMA funcionalidade, explorando bem (carrossel de 3 telas: funcionalidade, tela do app, detalhe). Não repetir funcionalidade até mostrar todas.
+- A funcionalidade é dita já na tela 1 (capa), com o resultado concreto pra quem vende. Sai a regra de "não entregar a resposta na tela 1".
+- Nem sempre precisa mostrar a tela do app.
+- Em 14/11 foram só 2 posts ("bem bons"). Quantidade dos próximos dias a combinar com a Luana.
+- Foto de salgadinhos sortidos em tigelinhas (estilo bar) foi rejeitada: "parece salgadinho de bar".
+
+## Gancho (tela 1 dos carrosséis) — regras antigas, até 13/11
 - Aprovar o gancho com ela ANTES de montar a tela. Mandar 2 ou 3 opções por post, com a sua escolha e o porquê.
 - Voz da marca (empresa fazendo propaganda), nunca primeira pessoa.
 - Único objetivo: fazer passar pra tela 2. Abrir uma pergunta sem entregar a resposta.
@@ -71,3 +79,5 @@ Regras definidas pela Luana. Seguir à risca. Em caso de dúvida, perguntar a el
 | 13/11 | C2 | Cento de docinhos: embalagem no custo | T8 navy | doce_brig_1 |
 | 13/11 | F2 | Gastos do negócio | N12 | salg_coxinha_1 |
 | 13/11 | C3 | Perdas no estoque pronto (bolo de pote) | N10 azul | doce_bolopote_2 |
+| 14/11 | C1 (13h) | Produção para estoque + estoque pronto | N11 navy | salg_coxinha_2 (telas 1 e 3), salg_bolinha_2 (tela 2) |
+| 14/11 | C2 (17h) | Custo atualiza quando o ingrediente sobe (leite condensado) | T5 creme | natal_caixabrig_1 |

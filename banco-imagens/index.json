@@ -172,7 +172,12 @@
     1280,
     1023
    ],
-   "usos": []
+   "usos": [
+    {
+     "data": "2026-11-14",
+     "post": "C1 produção para estoque (tela 2)"
+    }
+   ]
   },
   {
    "arquivo": "banco-imagens/salg_coxinha_1.jpg",
@@ -199,7 +204,12 @@
     1440,
     1046
    ],
-   "usos": []
+   "usos": [
+    {
+     "data": "2026-11-14",
+     "post": "C1 produção para estoque (tela 1 + tela 3)"
+    }
+   ]
   },
   {
    "arquivo": "banco-imagens/salg_empada_1.jpg",
@@ -307,6 +317,22 @@
     {
      "data": "2026-11-12",
      "post": "F1 brownie venda direta x iFood"
+    }
+   ]
+  },
+  {
+   "arquivo": "banco-imagens/natal_caixabrig_1.jpg",
+   "categoria": "natal",
+   "produto": "caixinhas de brigadeiro de Natal",
+   "fonte": "Google Imagens (pasta antiga gerador/fotos/caixa1_full.jpg)",
+   "tamanho": [
+    810,
+    1080
+   ],
+   "usos": [
+    {
+     "data": "2026-11-14",
+     "post": "C2 leite condensado (telas 1, 2 e miniatura na 3)"
     }
    ]
   }
