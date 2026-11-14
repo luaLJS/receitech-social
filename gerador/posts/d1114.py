@@ -8,7 +8,7 @@ MODE = sys.argv[1] if len(sys.argv) > 1 else "local"
 OUT = sys.argv[2] if len(sys.argv) > 2 else "/tmp/d1114"
 os.makedirs(OUT, exist_ok=True)
 BANK = "/home/claude/receitech-social/banco-imagens/"
-IMGS = {"SORT": "salg_sortidos_1.jpg", "CXB": "natal_caixabrig_1.jpg"}
+IMGS = {"COX": "salg_coxinha_2.jpg", "BOL": "salg_bolinha_2.jpg", "CXB": "natal_caixabrig_1.jpg"}
 LOGOS = {"LOGOB": "/home/claude/receitech-social/gerador/posts/logo_dark.png",
          "LOGOW": "/home/claude/receitech-social/gerador/posts/logo_white.png"}
 BLOBS = {"LOGOB": "/_blob/f2996fe4c9fb0951e6c5b11ec42e37da", "LOGOW": "/_blob/c900d55a8870af975f0e491905355cb1"}
@@ -57,7 +57,7 @@ def c1_s1():
         f'<span style="transform: rotate(90deg); font-size: 15px; font-weight: {700 if on else 400}; color: {NAVY}; white-space: nowrap">{n}</span></div>' for n, on in tabs)
     inner = f'''<div style="position: absolute; left: 60px; top: 60px; width: 380px; height: 600px; background: #FFFFFF; border: 1.5px solid {NAVY}; border-radius: 10px; box-sizing: border-box">
 <div style="position: absolute; left: 30px; right: 30px; top: 40px; color: {NAVY}; font-size: 29px; font-weight: 600; line-height: 1.18; letter-spacing: -0.8px">Planeje a produção da semana. O que fica pronto já entra no estoque.</div>
-<img src="{U("SORT")}" alt="Salgadinhos sortidos" style="position: absolute; left: 30px; top: 262px; width: 317px; height: 250px; object-fit: cover; border-radius: 8px">
+<img src="{U("COX")}" alt="Coxinhas de frango cortadas ao meio" style="position: absolute; left: 30px; top: 262px; width: 317px; height: 250px; object-fit: cover; object-position: 50% 45%; border-radius: 8px">
 <img src="{U("LOGOB")}" alt="receitech" style="position: absolute; left: 30px; bottom: 30px; height: 20px; width: auto">
 </div>
 <div style="position: absolute; left: 440px; top: 120px; display: flex; flex-direction: column; gap: 4px">{t}</div>'''
@@ -100,7 +100,7 @@ def rotina_prod_screen():
 
 def c1_s2():
     inner = f'''<div style="position: absolute; left: 44px; right: 60px; top: 50px; color: {NAVY}; font-size: 28px; font-weight: 600; line-height: 1.17; letter-spacing: -0.8px">Cada produção com status: pendente, em produção, produzido.</div>
-<img src="{U("SORT")}" alt="Coxinhas e risoles" style="position: absolute; left: 36px; top: 300px; width: 170px; height: 210px; object-fit: cover; object-position: 30% 70%; border-radius: 12px">
+<img src="{U("BOL")}" alt="Bolinhas de queijo" style="position: absolute; left: 36px; top: 300px; width: 170px; height: 210px; object-fit: cover; object-position: 55% 60%; border-radius: 12px">
 <div style="position: absolute; left: 222px; top: 190px">{phone(rotina_prod_screen(), 600)}</div>
 <img src="{U("LOGOB")}" alt="receitech" style="position: absolute; left: 36px; bottom: 30px; height: 20px; width: auto">'''
     return box("#FFFFFF", inner)
@@ -139,7 +139,7 @@ def c1_s3():
     inner = f'''<div style="position: absolute; left: 127px; top: 36px">{phone(stock_screen(), 520)}</div>
 <div style="position: absolute; left: 44px; right: 44px; top: 586px; color: {NAVY}; font-size: 27px; font-weight: 600; line-height: 1.17; letter-spacing: -0.8px">Marcou como produzido, entra no estoque pronto. Vendeu, sai.</div>'''
     inner = inner.replace("left: 127px; top: 36px", "left: 60px; top: 36px")
-    inner += f'''<img src="{U("SORT")}" alt="Mini salgados" style="position: absolute; left: 336px; top: 170px; width: 160px; height: 200px; object-fit: cover; object-position: 75% 20%; border-radius: 12px">'''
+    inner += f'''<img src="{U("COX")}" alt="Coxinha de frango" style="position: absolute; left: 336px; top: 170px; width: 160px; height: 200px; object-fit: cover; object-position: 78% 50%; border-radius: 12px">'''
     return box(LBLUE, inner)
 
 
