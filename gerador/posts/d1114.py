@@ -137,7 +137,7 @@ def stock_screen():
 
 def c1_s3():
     inner = f'''<div style="position: absolute; left: 127px; top: 36px">{phone(stock_screen(), 520)}</div>
-<div style="position: absolute; left: 44px; right: 44px; top: 586px; color: {NAVY}; font-size: 27px; font-weight: 600; line-height: 1.17; letter-spacing: -0.8px">Marcou como produzido, entra no estoque pronto. Vendeu, sai.</div>'''
+<div style="position: absolute; left: 44px; right: 44px; top: 586px; color: {NAVY}; font-size: 27px; font-weight: 600; line-height: 1.17; letter-spacing: -0.8px">Marcou como produzido, entra no estoque. Se vendeu, sai do estoque.</div>'''
     inner = inner.replace("left: 127px; top: 36px", "left: 60px; top: 36px")
     inner += f'''<img src="{U("COX")}" alt="Coxinha de frango" style="position: absolute; left: 336px; top: 170px; width: 160px; height: 200px; object-fit: cover; object-position: 78% 50%; border-radius: 12px">'''
     return box(LBLUE, inner)
