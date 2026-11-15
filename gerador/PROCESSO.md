@@ -7,8 +7,8 @@
 4. Baixar o canvas.json atual do artifact (read_file, slug 969fa822-132d-4a02-8ed1-b92e5c3beee1, path project/canvas.json) e salvar em /mnt/user-data/outputs/artifacts/969fa822-132d-4a02-8ed1-b92e5c3beee1/project/canvas.json. Sempre reler antes de publicar (a Luana pode ter editado).
 
 ## 1. Planejar (sem montar nada)
-- Escolher 5 temas: 3 carrosséis + 2 fotos únicas. Funcionalidades do Receitech que ainda não apareceram nos últimos dias (ver histórico em REGRAS.md). Exemplos: preço do produto, cardápio online, lista de compras, aba Lucro / retirada, lucro por canal (iFood), estoque de pronta-entrega, encomendas por data de entrega, gastos do negócio, precificação por foto, vendas por cliente (só se já existir no app).
-- Para cada post: 2 ou 3 opções de frase (gancho ou frase da foto única) + frase da tela 2 + layout (dos 21) + foto do banco.
+- Escolher 2 temas: 2 carrosséis de 3 telas. Funcionalidades do Receitech que ainda não apareceram nos últimos dias (ver histórico em REGRAS.md). Exemplos: preço do produto, cardápio online, lista de compras, aba Lucro / retirada, lucro por canal (iFood), estoque de pronta-entrega, encomendas por data de entrega, gastos do negócio, precificação por foto, vendas por cliente (só se já existir no app).
+- Para cada post: como a funcionalidade funciona (1 ou 2 frases) + 2 ou 3 opções de frase da tela 1 (com a funcionalidade) + frases das telas 2 e 3 + layout (dos 21) + foto do banco.
 - Mandar tudo numa mensagem numerada (SendUserMessage) pedindo pra ela escolher. ESPERAR a resposta.
 
 ## 2. Montar

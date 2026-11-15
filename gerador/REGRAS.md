@@ -10,11 +10,11 @@ Regras definidas pela Luana. Seguir à risca. Em caso de dúvida, perguntar a el
 - Mostrar as imagens no canvas do Claude Design e também no chat.
 
 ## Formato do dia
-- 5 posts por dia nas duas redes (mesma imagem, mesma legenda): 3 carrosséis + 2 fotos únicas.
+- 2 posts por dia nas duas redes (mesma imagem, mesma legenda): 2 carrosséis de 3 telas (decisão da Luana em 15/11; antes eram 3 carrosséis + 2 fotos únicas).
 - Carrossel: tela 1 = gancho, tela 2 = tela do app no celular (mínimo 2 telas).
 - Foto única: frase direta + tela do app no celular + foto de comida. Precisa fazer sentido sozinha no feed.
 - Cada post é um par problema → funcionalidade do Receitech. Nunca prometer algo que o app não faz.
-- Janela de postagem 10h–22h. Horários padrão: 12h, 14h30, 17h, 19h, 21h.
+- Janela de postagem 10h–22h. Horários padrão: 11h e 18h (desde 15/11). Se um já passou, usar o próximo horário livre até 22h.
 - Seguir a época do ano (nov/dez = Natal; depois Ano Novo, Páscoa, Dia das Mães, festa junina, Black Friday etc.).
 
 ## Formato a partir de 14/11 (substitui as regras de gancho abaixo quando conflitar)
@@ -22,7 +22,8 @@ Regras definidas pela Luana. Seguir à risca. Em caso de dúvida, perguntar a el
 - Cada post fala de UMA funcionalidade, explorando bem (carrossel de 3 telas: funcionalidade, tela do app, detalhe). Não repetir funcionalidade até mostrar todas.
 - A funcionalidade é dita já na tela 1 (capa), com o resultado concreto pra quem vende. Sai a regra de "não entregar a resposta na tela 1".
 - Nem sempre precisa mostrar a tela do app.
-- Em 14/11 foram só 2 posts ("bem bons"). Quantidade dos próximos dias a combinar com a Luana.
+- Em 14/11 foram só 2 posts ("bem bons"). A partir de 15/11: 2 carrosséis por dia, às 11h e 18h.
+- Ao propor, explicar em uma ou duas frases como a funcionalidade funciona no app e dar as frases das 3 telas. Formas de uso: preferir doce (bolo de pote, brownie recheado), mais útil que salgado.
 - Foto de salgadinhos sortidos em tigelinhas (estilo bar) foi rejeitada: "parece salgadinho de bar".
 
 ## Gancho (tela 1 dos carrosséis) — regras antigas, até 13/11
