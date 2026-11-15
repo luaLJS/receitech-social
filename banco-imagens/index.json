@@ -123,7 +123,12 @@
     829,
     1244
    ],
-   "usos": []
+   "usos": [
+    {
+     "data": "2026-11-15",
+     "post": "C1 sinal da encomenda (telas 1, 2 e 3)"
+    }
+   ]
   },
   {
    "arquivo": "banco-imagens/natal_encomenda_2.jpg",
