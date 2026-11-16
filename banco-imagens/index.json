@@ -340,6 +340,54 @@
      "post": "C2 leite condensado (telas 1, 2 e miniatura na 3)"
     }
    ]
+  },
+  {
+   "arquivo": "banco-imagens/doce_bolopote_3.jpg",
+   "categoria": "doce",
+   "produto": "bolo de pote de chocolate com granulado",
+   "fonte": "cdn.deliway.com.br",
+   "tamanho": [
+    940,
+    622
+   ],
+   "usos": [
+    {
+     "data": "2026-11-16",
+     "post": "P1 formas de uso (telas 1 e 2)"
+    }
+   ]
+  },
+  {
+   "arquivo": "banco-imagens/doce_bolo_3.jpg",
+   "categoria": "doce",
+   "produto": "bolo de brigadeiro inteiro",
+   "fonte": "sabornamesa.com.br",
+   "tamanho": [
+    1200,
+    900
+   ],
+   "usos": [
+    {
+     "data": "2026-11-16",
+     "post": "P1 formas de uso (tela 1)"
+    }
+   ]
+  },
+  {
+   "arquivo": "banco-imagens/doce_bolofatia_1.jpg",
+   "categoria": "doce",
+   "produto": "bolo de chocolate com fatia sendo servida",
+   "fonte": "oetker.com.br (sem marca visível)",
+   "tamanho": [
+    1272,
+    764
+   ],
+   "usos": [
+    {
+     "data": "2026-11-16",
+     "post": "P1 formas de uso (tela 1 + miniatura no app)"
+    }
+   ]
   }
  ]
 }
