@@ -23,7 +23,7 @@ NAVY, CREAM, SKY, CREAMT = "#101828", "#F3EDE3", "#CFE2FF", "#FFF4D2"
 POP = "font-family: 'Poppins', sans-serif"
 SER = "font-family: 'Libre Caslon Text', Georgia, serif"
 ITA = "font-family: 'Instrument Serif', Georgia, serif; font-style: italic"
-FONTS = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Libre+Caslon+Text:wght@400;700&family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@800;900&display=swap"
+FONTS = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Libre+Caslon+Text:wght@400;700&family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@800;900&family=Anton&display=swap"
 
 
 def box(bg, inner):
@@ -76,10 +76,33 @@ def p1_simples():
     return box(SKY, inner)
 
 
+# ---------- opção e: N3 (caixa alta condensada na foto) ----------
+def p1_n3():
+    inner = f'''<img src="{U("FATIA")}" alt="Bolo de chocolate com cobertura e uma fatia sendo servida" style="position: absolute; left: 0; top: 0; width: 540px; height: 720px; object-fit: cover; object-position: 62% 50%">
+<div style="position: absolute; inset: 0; background: rgba(16,24,40,0.45)"></div>
+<div style="position: absolute; left: 0; right: 0; top: 120px; text-align: center; color: #FFFFFF; font-size: 14px; font-weight: 500">receitech</div>
+<div style="position: absolute; left: 40px; right: 40px; top: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; text-align: center">
+<div style="font-family: 'Anton', 'Inter Tight', sans-serif; color: {SKY}; font-size: 64px; line-height: 0.98; letter-spacing: 0.5px">A MESMA MASSA VIRA BOLO, FATIA E BOLO DE POTE.</div>
+<div style="color: #FFFFFF; font-size: 19px; font-weight: 500">O Receitech calcula o custo de cada um.</div></div>'''
+    return box(NAVY, inner)
+
+
+# ---------- opção f: N6 (caixa alta em bloco na foto) ----------
+def p1_n6():
+    inner = f'''<img src="{U("BOLO")}" alt="Bolo de chocolate com brigadeiros em cima" style="position: absolute; left: 0; top: 0; width: 540px; height: 720px; object-fit: cover; object-position: 50% 50%">
+<div style="position: absolute; inset: 0; background: rgba(16,24,40,0.42)"></div>
+<div style="position: absolute; left: 60px; right: 60px; top: 0; bottom: 0; display: flex; align-items: center">
+<div style="width: 100%; text-align: justify; text-align-last: justify; font-weight: 600; color: {CREAMT}; font-size: 38px; line-height: 1.04; word-spacing: 10px">A MESMA MASSA VIRA BOLO, FATIA E BOLO DE POTE.</div></div>
+<div style="position: absolute; left: 60px; right: 60px; bottom: 70px; color: #FFFFFF; font-size: 17px; font-weight: 500">O Receitech calcula o custo de cada um.</div>'''
+    return box(NAVY, inner)
+
+
 SLIDES = [
     ("D16_P1_S1_b", "16/11 · P1 · tela 1 · opção b (N10)", p1_n10),
     ("D16_P1_S1_c", "16/11 · P1 · tela 1 · opção c (T1, três fotos)", p1_t1),
     ("D16_P1_S1_d", "16/11 · P1 · tela 1 · opção d (frase + uma foto)", p1_simples),
+    ("D16_P1_S1_e", "16/11 · P1 · tela 1 · opção e (N3, caixa alta na foto)", p1_n3),
+    ("D16_P1_S1_f", "16/11 · P1 · tela 1 · opção f (N6, bloco na foto)", p1_n6),
 ]
 
 
@@ -97,5 +120,5 @@ if __name__ == "__main__":
             open(os.path.join(OUT, code + ".dc.html"), "w").write(doc)
         else:
             open(os.path.join(OUT, code + ".html"), "w").write(
-                f"<html><head><meta charset='utf-8'><link href='{FONTS}' rel='stylesheet'><style>body{{margin:0}}</style></head><body>{html}</body></html>")
+                f"<html><head><meta charset='utf-8'><link href='{FONTS}' rel='stylesheet'><link href='file:///tmp/claude-0/-home-claude-receitech-social/d7960c7d-3200-51d5-bbb4-0ad4048a92d9/scratchpad/fonts/local.css' rel='stylesheet'><style>body{{margin:0}}</style></head><body>{html}</body></html>")
     print("ok", MODE, OUT)

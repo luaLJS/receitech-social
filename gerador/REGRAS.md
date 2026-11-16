@@ -42,7 +42,8 @@ Regras definidas pela Luana. Seguir à risca. Em caso de dúvida, perguntar a el
 - Chamada separada do resto quando existir ("E tem como evitar ›"), com o chevron dentro do texto, grande e pontudo. Sem a legenda "Passe pro lado". Logo não é obrigatório na tela 1.
 
 ## Visual
-- Usar os 21 layouts do "Feed proposto" no canvas (T1–T9, N1–N12). Abrir o quadro do layout antes de propor (não escolher só pelo nome) e mostrar opções de layout em mockup no canvas, não descritas. A mesma referência nunca fica ao lado de outra igual no feed. Variar cor, posição, tipografia.
+- Usar os 21 layouts do "Feed proposto" no canvas (T1–T9, N1–N12). Abrir o quadro do layout antes de propor (não escolher só pelo nome) e mostrar opções de layout em mockup no canvas, não descritas. Antes de propor, montar o feed real (capas já postadas, pela ordem do Buffer) e simular onde o post novo vai cair: o feed tem que ficar variado como o Feed proposto (variar estilo: serifa, caixa alta condensada, texto pesado, foto inteira, etc.), sem repetir cor/estilo dos vizinhos. Priorizar layouts do Feed proposto que ainda não apareceram no feed real.
+- Antes de propor um tema, conferir nas capas já postadas se a funcionalidade já apareceu (ex.: retirada já saiu em 12/11 no F2). A mesma referência nunca fica ao lado de outra igual no feed. Variar cor, posição, tipografia.
 - Cores da identidade: azul #3D86F7, navy #101828, azul-claro #EBF5FF, céu #CFE2FF, creme #F3EDE3.
 - Toda tela tem comida brasileira (doces, bolos, salgadinhos), apetitosa e reconhecível (ela reclamou de um brownie que não parecia brownie).
 - Foto sempre reta, nunca inclinada. Foto real colocada de forma simples. Nada de foto de fundo na tela inteira (na tela 1), polaroid, durex, print de bloco de notas, caixinhas de legenda, efeitos "pensados demais". Parecer post de uma pessoa de 20 anos, natural.
