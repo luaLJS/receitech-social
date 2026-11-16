@@ -139,7 +139,8 @@
     1280,
     854
    ],
-   "usos": []
+   "usos": [],
+   "obs": "parecida demais com natal_encomenda_1 (mesma caixa de bombons, mesma fonte); a Luana considera repetida, não usar"
   },
   {
    "arquivo": "banco-imagens/natal_panetone_1.jpg",
@@ -388,6 +389,17 @@
      "post": "P1 formas de uso (tela 1 + miniatura no app)"
     }
    ]
+  },
+  {
+   "arquivo": "banco-imagens/natal_paodemel_1.jpg",
+   "categoria": "natal",
+   "produto": "pão de mel de Natal com doce de leite",
+   "fonte": "patipiva.com.br",
+   "tamanho": [
+    1000,
+    1500
+   ],
+   "usos": []
   }
  ]
 }

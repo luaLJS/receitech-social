@@ -49,7 +49,7 @@ Regras definidas pela Luana. Seguir à risca. Em caso de dúvida, perguntar a el
 - Foto sempre reta, nunca inclinada. Foto real colocada de forma simples. Nada de foto de fundo na tela inteira (na tela 1), polaroid, durex, print de bloco de notas, caixinhas de legenda, efeitos "pensados demais". Parecer post de uma pessoa de 20 anos, natural.
 - Mesmo peso de fonte nas linhas do gancho. Texto do tamanho do C2 ou menor.
 - A tela 1 vira capa no grid do perfil: não pode ficar feia nem estranha.
-- Nenhuma imagem se repete em menos de 30 dias (inclusive a foto do produto dentro da tela do app). Registrar cada uso em banco-imagens/index.json.
+- Nenhuma imagem se repete em menos de 30 dias (inclusive a foto do produto dentro da tela do app). Registrar cada uso em banco-imagens/index.json. Foto parecida com uma já usada (mesmo produto, mesma fonte, mesma cena) conta como repetida: buscar foto nova no Google pelo Chrome (Luana, 16/11).
 - Nada de marca de terceiros visível nas fotos (logo, embalagem de outra marca, chocolate de marca).
 - Dois posts seguidos não podem ficar com a mesma composição (ex.: foto à esquerda + celular à direita nos dois). Inverter ou trocar de layout.
 - Emoji de Natal é bem-vindo na época.

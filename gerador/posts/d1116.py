@@ -8,7 +8,7 @@ MODE = sys.argv[1] if len(sys.argv) > 1 else "local"
 OUT = sys.argv[2] if len(sys.argv) > 2 else "/tmp/d1116"
 os.makedirs(OUT, exist_ok=True)
 BANK = "/home/claude/receitech-social/banco-imagens/"
-IMGS = {"NATAL": "natal_encomenda_2.jpg", "POTE": "doce_bolopote_3.jpg", "BOLO": "doce_bolo_3.jpg", "FATIA": "doce_bolofatia_1.jpg"}
+IMGS = {"NATAL": "natal_paodemel_1.jpg", "POTE": "doce_bolopote_3.jpg", "BOLO": "doce_bolo_3.jpg", "FATIA": "doce_bolofatia_1.jpg"}
 BLOBS = {"LOGOB": "/_blob/f2996fe4c9fb0951e6c5b11ec42e37da", "LOGOW": "/_blob/c900d55a8870af975f0e491905355cb1"}
 bf = "/home/claude/receitech-social/gerador/posts/d1116_blobs.json"
 if os.path.exists(bf):
@@ -152,7 +152,7 @@ P2_T1B = "O Receitech mostra quanto você lucrou no mês e quanto pode tirar pra
 
 
 def p2_n3():
-    inner = f'''<img src="{U("NATAL")}" alt="Caixa de bombons de Natal com laço" style="position: absolute; left: 0; top: 0; width: 540px; height: 720px; object-fit: cover; object-position: 62% 50%">
+    inner = f'''<img src="{U("NATAL")}" alt="Pão de mel de Natal com recheio de doce de leite" style="position: absolute; left: 0; top: 0; width: 540px; height: 720px; object-fit: cover; object-position: 50% 45%">
 <div style="position: absolute; inset: 0; background: rgba(16,24,40,0.52)"></div>
 <div style="position: absolute; left: 0; right: 0; top: 120px; text-align: center; color: #FFFFFF; font-size: 14px; font-weight: 500">receitech</div>
 <div style="position: absolute; left: 40px; right: 40px; top: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px; text-align: center">
@@ -162,7 +162,7 @@ def p2_n3():
 
 
 def p2_n4():
-    inner = f'''<img src="{U("NATAL")}" alt="Caixa de bombons de Natal com laço" style="position: absolute; left: 0; top: 0; width: 540px; height: 720px; object-fit: cover; object-position: 62% 50%; filter: blur(9px); transform: scale(1.08)">
+    inner = f'''<img src="{U("NATAL")}" alt="Pão de mel de Natal com recheio de doce de leite" style="position: absolute; left: 0; top: 0; width: 540px; height: 720px; object-fit: cover; object-position: 50% 45%; filter: blur(9px); transform: scale(1.08)">
 <div style="position: absolute; inset: 0; background: rgba(16,24,40,0.22)"></div>
 <div style="position: absolute; left: 40px; right: 40px; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; gap: 22px">
 <div style="font-weight: 600; color: #FFFFFF; font-size: 50px; line-height: 1.06; letter-spacing: 0.5px; text-shadow: 0 1px 12px rgba(0,0,0,0.3)">VENDEU MUITO<br>E O DINHEIRO<br>SUMIU?</div>
