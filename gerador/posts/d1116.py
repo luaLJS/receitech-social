@@ -9,14 +9,18 @@ OUT = sys.argv[2] if len(sys.argv) > 2 else "/tmp/d1116"
 os.makedirs(OUT, exist_ok=True)
 BANK = "/home/claude/receitech-social/banco-imagens/"
 IMGS = {"POTE": "doce_bolopote_3.jpg", "BOLO": "doce_bolo_3.jpg", "FATIA": "doce_bolofatia_1.jpg"}
-BLOBS = {}
+BLOBS = {"LOGOB": "/_blob/f2996fe4c9fb0951e6c5b11ec42e37da"}
 bf = "/home/claude/receitech-social/gerador/posts/d1116_blobs.json"
 if os.path.exists(bf):
     BLOBS.update(json.load(open(bf)))
 
 
 def U(k):
-    return BLOBS[k] if MODE == "canvas" else "file://" + BANK + IMGS[k]
+    if MODE == "canvas":
+        return BLOBS[k]
+    if k == "LOGOB":
+        return "file:///home/claude/receitech-social/gerador/posts/logo_dark.png"
+    return "file://" + BANK + IMGS[k]
 
 
 NAVY, CREAM, SKY, CREAMT = "#101828", "#F3EDE3", "#CFE2FF", "#FFF4D2"
@@ -97,12 +101,52 @@ def p1_n6():
     return box(NAVY, inner)
 
 
+# ---------- tela 2: receita com formas de uso ----------
+def receita_screen():
+    back = svg('<path d="M15 5l-7 7 7 7"></path>', 20, DARK, 2.4)
+    more = svg('<circle cx="5" cy="12" r="1.6"></circle><circle cx="12" cy="12" r="1.6"></circle><circle cx="19" cy="12" r="1.6"></circle>', 22, DARK, 2)
+    chev = svg('<path d="M9 6l6 6-6 6"></path>', 18, "#98A2B3", 2.2)
+
+    def tab(t, on=False):
+        return (f'<div style="flex: 1; text-align: center; padding: 12px 0; font-size: 14px; font-weight: {700 if on else 500}; '
+                f'color: {BLUE if on else SEC}; border-bottom: 2px solid {BLUE if on else "transparent"}">{t}</div>')
+
+    def forma(nome, qtd, custo):
+        return (f'<div style="display: flex; align-items: center; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid {DIV}">'
+                f'<div style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 17px; font-weight: 600">{nome}</span>'
+                f'<span style="font-size: 14px; color: {SEC}">{qtd} de massa</span></div>'
+                f'<div style="display: flex; align-items: center; gap: 8px"><div style="display: flex; flex-direction: column; align-items: flex-end; gap: 2px">'
+                f'<span style="font-size: 12px; color: {SEC}">Custo</span><span style="font-size: 18px; font-weight: 700">R$ {custo}</span></div>{chev}</div></div>')
+    return f'''<div style="width: 390px; height: 844px; background: #FFFFFF; {POP}; color: {DARK}; overflow: hidden; position: relative">
+<div style="height: 54px"></div>
+<div style="height: 48px; display: grid; grid-template-columns: 48px 1fr 48px; align-items: center; padding: 0 6px">
+<div style="display: flex; justify-content: center">{back}</div><span style="text-align: center; font-size: 18px; font-weight: 700">Receita</span><div style="display: flex; justify-content: center">{more}</div></div>
+<div style="padding: 14px 20px 0; display: flex; gap: 14px; align-items: center">
+<img src="{U("FATIA")}" alt="Massa de chocolate" style="width: 72px; height: 72px; border-radius: 16px; object-fit: cover; object-position: 66% 50%">
+<div style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 24px; font-weight: 700; letter-spacing: -0.6px">Massa de chocolate</span>
+<span style="font-size: 14px; color: {SEC}">Rende 2 kg · custo R$ 36,00</span></div></div>
+<div style="margin-top: 18px; display: flex; border-bottom: 1px solid {DIV}; padding: 0 12px">{tab("Ingredientes")}{tab("Formas de uso", True)}{tab("Produtos")}</div>
+<div style="padding: 4px 20px 0">
+{forma("Bolo inteiro", "1 kg", "18,00")}
+{forma("Fatia", "120 g", "2,16")}
+{forma("Bolo de pote", "100 g", "1,80")}
+<div style="margin-top: 18px; display: flex; align-items: center; justify-content: center; gap: 8px; height: 48px; border-radius: 14px; border: 1.5px dashed #B2CCFF; color: {BLUE}; font-size: 15px; font-weight: 600">+ Adicionar forma de uso</div>
+</div>
+<div style="position: absolute; left: 0; right: 0; bottom: 8px; display: flex; justify-content: center"><div style="width: 134px; height: 5px; border-radius: 3px; background: {DARK}"></div></div>
+</div>'''
+
+
+def p1_s2():
+    inner = f'''<div style="position: absolute; left: 44px; right: 44px; top: 50px; color: {NAVY}; font-size: 28px; font-weight: 600; line-height: 1.16; letter-spacing: -0.8px; text-wrap: balance">Você cadastra a massa uma vez e diz de que jeitos ela sai.</div>
+<div style="position: absolute; left: 50%; top: 168px; transform: translateX(-50%)">{phone(receita_screen(), 500)}</div>
+<img src="{U("POTE")}" alt="Bolo de pote de chocolate" style="position: absolute; left: 40px; top: 512px; width: 150px; height: 150px; object-fit: cover; object-position: 50% 50%; border-radius: 12px">
+<img src="{U("LOGOB")}" alt="receitech" style="position: absolute; right: 40px; bottom: 30px; height: 20px; width: auto">'''
+    return box(LBLUE, inner)
+
+
 SLIDES = [
-    ("D16_P1_S1_b", "16/11 · P1 · tela 1 · opção b (N10)", p1_n10),
-    ("D16_P1_S1_c", "16/11 · P1 · tela 1 · opção c (T1, três fotos)", p1_t1),
-    ("D16_P1_S1_d", "16/11 · P1 · tela 1 · opção d (frase + uma foto)", p1_simples),
-    ("D16_P1_S1_e", "16/11 · P1 · tela 1 · opção e (N3, caixa alta na foto)", p1_n3),
-    ("D16_P1_S1_f", "16/11 · P1 · tela 1 · opção f (N6, bloco na foto)", p1_n6),
+    ("D16_P1_S1", "16/11 · P1 · tela 1 · 15h (T1)", p1_t1),
+    ("D16_P1_S2", "16/11 · P1 · tela 2 (formas de uso)", p1_s2),
 ]
 
 
