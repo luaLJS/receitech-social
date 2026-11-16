@@ -85,3 +85,4 @@ Regras definidas pela Luana. Seguir à risca. Em caso de dúvida, perguntar a el
 | 14/11 | C2 (17h) | Custo atualiza quando o ingrediente sobe (leite condensado) | T5 creme | natal_caixabrig_1 |
 | 15/11 | C1 (19h20) | Sinal da encomenda de Natal: quanto falta receber + só entra no lucro quando pago e entregue | N9 azul-claro | natal_encomenda_1 (telas 1, 2 e 3) |
 | 16/11 | P1 (15h) | Formas de uso: a mesma massa vira bolo, fatia e bolo de pote (2 telas) | T1 branco | doce_bolo_3, doce_bolofatia_1, doce_bolopote_3 |
+| 16/11 | P2 (18h) | Lucro do mês e retirada: "Vendeu muito e o dinheiro sumiu?" (2 telas; ângulo novo do tema de 12/11 F2, pedido da Luana) | N3 (caixa alta condensada na foto) | natal_docinhos_1 |
