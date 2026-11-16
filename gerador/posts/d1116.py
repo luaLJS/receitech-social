@@ -8,7 +8,7 @@ MODE = sys.argv[1] if len(sys.argv) > 1 else "local"
 OUT = sys.argv[2] if len(sys.argv) > 2 else "/tmp/d1116"
 os.makedirs(OUT, exist_ok=True)
 BANK = "/home/claude/receitech-social/banco-imagens/"
-IMGS = {"POTE": "doce_bolopote_3.jpg"}
+IMGS = {"POTE": "doce_bolopote_3.jpg", "BOLO": "doce_bolo_3.jpg", "FATIA": "doce_bolofatia_1.jpg"}
 BLOBS = {}
 bf = "/home/claude/receitech-social/gerador/posts/d1116_blobs.json"
 if os.path.exists(bf):
@@ -23,7 +23,7 @@ NAVY, CREAM, SKY, CREAMT = "#101828", "#F3EDE3", "#CFE2FF", "#FFF4D2"
 POP = "font-family: 'Poppins', sans-serif"
 SER = "font-family: 'Libre Caslon Text', Georgia, serif"
 ITA = "font-family: 'Instrument Serif', Georgia, serif; font-style: italic"
-FONTS = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Libre+Caslon+Text:wght@400;700&family=Instrument+Serif:ital@0;1&display=swap"
+FONTS = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Libre+Caslon+Text:wght@400;700&family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@800;900&display=swap"
 
 
 def box(bg, inner):
@@ -56,9 +56,30 @@ def p1_n10():
     return box(NAVY, inner)
 
 
+# ---------- opção c: T1 (título + 3 fotos) ----------
+def p1_t1():
+    def cell(k, label, pos):
+        return f'''<div style="display: flex; flex-direction: column; gap: 8px">
+<img src="{U(k)}" alt="{label}" style="width: 146px; height: 230px; object-fit: cover; object-position: {pos}">
+<span style="{POP}; font-size: 16px; color: {NAVY}; font-weight: 500">{label}</span></div>'''
+    inner = f'''<div style="position: absolute; left: 40px; right: 40px; top: 104px; text-align: center; {POP}; font-weight: 700; color: {NAVY}; font-size: 38px; line-height: 1.06; letter-spacing: -1.6px; text-wrap: balance">A mesma massa vira bolo, fatia e bolo de pote.</div>
+<div style="position: absolute; left: 40px; right: 40px; top: 236px; display: flex; justify-content: space-between">
+{cell("BOLO", "bolo", "50% 60%")}{cell("FATIA", "fatia", "68% 50%")}{cell("POTE", "pote", "50% 50%")}</div>
+<div style="position: absolute; left: 0; right: 0; top: 560px; text-align: center; {POP}; font-weight: 700; color: {NAVY}; font-size: 22px; letter-spacing: -0.8px">O Receitech calcula o custo de cada um. <span style="color: {BLUE}">›</span></div>'''
+    return box("#FFFFFF", inner)
+
+
+# ---------- opção d: frase em cima + uma foto simples ----------
+def p1_simples():
+    inner = f'''<div style="position: absolute; left: 44px; right: 44px; top: 56px; color: {NAVY}; font-size: 31px; font-weight: 600; line-height: 1.16; letter-spacing: -0.9px">A mesma massa vira bolo, fatia e bolo de pote.<br><span style="color: {BLUE}">O Receitech calcula o custo de cada um.</span></div>
+<img src="{U("POTE")}" alt="Bolo de pote de chocolate com granulado" style="position: absolute; left: 110px; top: 290px; width: 320px; height: 360px; object-fit: cover; object-position: 50% 50%">'''
+    return box(SKY, inner)
+
+
 SLIDES = [
-    ("D16_P1_S1_a", "16/11 · P1 · tela 1 · opção a (N8 adaptado)", p1_n8),
     ("D16_P1_S1_b", "16/11 · P1 · tela 1 · opção b (N10)", p1_n10),
+    ("D16_P1_S1_c", "16/11 · P1 · tela 1 · opção c (T1, três fotos)", p1_t1),
+    ("D16_P1_S1_d", "16/11 · P1 · tela 1 · opção d (frase + uma foto)", p1_simples),
 ]
 
 
