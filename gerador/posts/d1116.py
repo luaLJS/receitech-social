@@ -171,11 +171,54 @@ def p2_n4():
     return box(NAVY, inner)
 
 
+def lucro_screen():
+    chev = svg('<path d="M6 9l6 6 6-6"></path>', 16, DARK, 2.4)
+    AMB, AMBG, GRN = "#B54708", "#FFFAEB", "#067647"
+
+    def line(n, v, minus=False, bold=False, top=False):
+        return (f'<div style="display: flex; justify-content: space-between; padding: 9px 0; gap: 10px; font-size: 15px; {"font-weight: 700; border-top: 1px solid " + DIV + ";" if top else ""}">'
+                f'<span style="color: {DARK if bold else SEC}">{"− " if minus else ""}{n}</span><span style="font-weight: {700 if bold else 500}; white-space: nowrap">R$ {v}</span></div>')
+    items = "".join(f'<span style="font-size: 11px; font-weight: {700 if n == "Lucro" else 500}; color: {BLUE if n == "Lucro" else "#98A2B3"}">{n}</span>' for n in ["Rotina", "Vendas", "Lucro", "Produtos", "Perfil"])
+    return f'''<div style="width: 390px; height: 844px; background: #FFFFFF; {POP}; color: {DARK}; overflow: hidden; position: relative">
+<div style="height: 54px"></div>
+<div style="padding: 4px 20px 0; display: flex; align-items: center; justify-content: space-between"><span style="font-size: 24px; font-weight: 700; letter-spacing: -0.5px">Lucro</span>
+<span style="display: flex; align-items: center; gap: 4px; font-size: 14px; font-weight: 600">Dezembro 2026 {chev}</span></div>
+<div style="padding: 16px 20px 0">
+<span style="font-size: 13px; font-weight: 600; color: {SEC}; letter-spacing: 0.4px">LUCRO FINAL DO MÊS</span>
+<div style="margin-top: 2px; font-size: 38px; font-weight: 700; letter-spacing: -1px; color: {GRN}">R$ 3.240,00</div>
+<div style="margin-top: 10px">
+{line("Vendas", "6.800,00")}
+{line("Custos de ingredientes e embalagens", "2.720,00", True)}
+{line("Resultado das vendas", "4.080,00", bold=True, top=True)}
+{line("Gastos do negócio", "840,00", True)}
+{line("Lucro final", "3.240,00", bold=True, top=True)}
+</div>
+<div style="margin-top: 14px; border: 1px solid {DIV}; border-radius: 16px; padding: 14px 16px">
+<span style="font-size: 13px; font-weight: 600; color: {SEC}; letter-spacing: 0.4px">SUA RETIRADA DO MÊS</span>
+<div style="margin-top: 10px; height: 10px; border-radius: 6px; background: #D0D5DD; overflow: hidden"><div style="width: 69%; height: 100%; background: {BLUE}"></div></div>
+<div style="margin-top: 10px; display: flex; justify-content: space-between; font-size: 15px"><span style="display: flex; align-items: center; gap: 8px"><span style="width: 9px; height: 9px; border-radius: 5px; background: {BLUE}"></span>Retirada para você</span><span style="font-weight: 700">R$ 2.240,00</span></div>
+<div style="margin-top: 8px; display: flex; justify-content: space-between; font-size: 15px"><span style="display: flex; align-items: center; gap: 8px; color: {SEC}"><span style="width: 9px; height: 9px; border-radius: 5px; background: #D0D5DD"></span>Valor mantido no negócio</span><span style="font-weight: 500">R$ 1.000,00</span></div>
+<div style="margin-top: 10px; font-size: 13px; font-weight: 600; color: {GRN}">112% da sua meta de retirada</div>
+</div>
+</div>
+<div style="position: absolute; left: 0; right: 0; bottom: 0; height: 74px; background: #FFFFFF; border-top: 1px solid {DIV}; display: flex; justify-content: space-around; padding-top: 14px; box-sizing: border-box">{items}</div>
+<div style="position: absolute; left: 0; right: 0; bottom: 8px; display: flex; justify-content: center"><div style="width: 134px; height: 5px; border-radius: 3px; background: {DARK}"></div></div>
+</div>'''
+
+
+def p2_s2():
+    inner = f'''<div style="position: absolute; left: 44px; right: 44px; top: 50px; color: {NAVY}; font-size: 29px; font-weight: 600; line-height: 1.15; letter-spacing: -0.8px; text-wrap: balance">Aqui está pra onde o dinheiro foi. E quanto sobrou pra você.</div>
+<div style="position: absolute; left: 40px; top: 176px">{phone(lucro_screen(), 510)}</div>
+<img src="{U("NATAL")}" alt="Docinhos de Natal decorados" style="position: absolute; left: 330px; top: 330px; width: 170px; height: 220px; object-fit: cover; object-position: 30% 60%; border-radius: 12px">
+<img src="{U("LOGOB")}" alt="receitech" style="position: absolute; right: 42px; bottom: 30px; height: 20px; width: auto">'''
+    return box(SKY, inner)
+
+
 SLIDES = [
     ("D16_P1_S1", "16/11 · P1 · tela 1 · 15h (T1)", p1_t1),
     ("D16_P1_S2", "16/11 · P1 · tela 2 (formas de uso)", p1_s2),
-    ("D16_P2_S1_a", "16/11 · P2 · tela 1 · opção a (N3)", p2_n3),
-    ("D16_P2_S1_b", "16/11 · P2 · tela 1 · opção b (N4)", p2_n4),
+    ("D16_P2_S1", "16/11 · P2 · tela 1 · 18h (N3)", p2_n3),
+    ("D16_P2_S2", "16/11 · P2 · tela 2 (aba Lucro)", p2_s2),
 ]
 
 
