@@ -10,7 +10,7 @@ Regras definidas pela Luana. Seguir à risca. Em caso de dúvida, perguntar a el
 - Mostrar as imagens no canvas do Claude Design e também no chat.
 
 ## Formato do dia
-- 2 posts por dia nas duas redes (mesma imagem, mesma legenda): 2 carrosséis de 3 telas (decisão da Luana em 15/11; antes eram 3 carrosséis + 2 fotos únicas).
+- 2 posts por dia nas duas redes (mesma imagem, mesma legenda). Cada post tem 1 ou 2 telas, nunca 3 (Luana em 16/11: "não faz sentido, tem que ser ou 1 ou 2 telas"; ela não aprovou o formato de 3 telas).
 - Carrossel: tela 1 = gancho, tela 2 = tela do app no celular (mínimo 2 telas).
 - Foto única: frase direta + tela do app no celular + foto de comida. Precisa fazer sentido sozinha no feed.
 - Cada post é um par problema → funcionalidade do Receitech. Nunca prometer algo que o app não faz.
@@ -19,11 +19,11 @@ Regras definidas pela Luana. Seguir à risca. Em caso de dúvida, perguntar a el
 
 ## Formato a partir de 14/11 (substitui as regras de gancho abaixo quando conflitar)
 - Objetivo dos posts: deixar a página do Receitech (Instagram e TikTok) mostrando o que o app faz, pra quem chega pelos vídeos das influenciadoras. Não é alcance.
-- Cada post fala de UMA funcionalidade, explorando bem (carrossel de 3 telas: funcionalidade, tela do app, detalhe). Não repetir funcionalidade até mostrar todas.
+- Cada post fala de UMA funcionalidade, explorando bem (1 ou 2 telas: funcionalidade + tela do app). Não repetir funcionalidade até mostrar todas.
 - A funcionalidade é dita já na tela 1 (capa), com o resultado concreto pra quem vende. Sai a regra de "não entregar a resposta na tela 1".
 - Nem sempre precisa mostrar a tela do app.
 - Em 14/11 foram só 2 posts ("bem bons"). A partir de 15/11: 2 carrosséis por dia, às 11h e 18h.
-- Ao propor, explicar em uma ou duas frases como a funcionalidade funciona no app e dar as frases das 3 telas. Formas de uso: preferir doce (bolo de pote, brownie recheado), mais útil que salgado.
+- Ao propor, explicar em uma ou duas frases como a funcionalidade funciona no app e dar as frases das telas. Propor um post de cada vez. Formas de uso: preferir doce (bolo de pote, brownie recheado), mais útil que salgado.
 - Foto de salgadinhos sortidos em tigelinhas (estilo bar) foi rejeitada: "parece salgadinho de bar".
 
 ## Gancho (tela 1 dos carrosséis) — regras antigas, até 13/11
@@ -42,7 +42,7 @@ Regras definidas pela Luana. Seguir à risca. Em caso de dúvida, perguntar a el
 - Chamada separada do resto quando existir ("E tem como evitar ›"), com o chevron dentro do texto, grande e pontudo. Sem a legenda "Passe pro lado". Logo não é obrigatório na tela 1.
 
 ## Visual
-- Usar os 21 layouts do "Feed proposto" no canvas (T1–T9, N1–N12). A mesma referência nunca fica ao lado de outra igual no feed. Variar cor, posição, tipografia.
+- Usar os 21 layouts do "Feed proposto" no canvas (T1–T9, N1–N12). Abrir o quadro do layout antes de propor (não escolher só pelo nome) e mostrar opções de layout em mockup no canvas, não descritas. A mesma referência nunca fica ao lado de outra igual no feed. Variar cor, posição, tipografia.
 - Cores da identidade: azul #3D86F7, navy #101828, azul-claro #EBF5FF, céu #CFE2FF, creme #F3EDE3.
 - Toda tela tem comida brasileira (doces, bolos, salgadinhos), apetitosa e reconhecível (ela reclamou de um brownie que não parecia brownie).
 - Foto sempre reta, nunca inclinada. Foto real colocada de forma simples. Nada de foto de fundo na tela inteira (na tela 1), polaroid, durex, print de bloco de notas, caixinhas de legenda, efeitos "pensados demais". Parecer post de uma pessoa de 20 anos, natural.
