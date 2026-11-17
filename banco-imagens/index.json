@@ -417,6 +417,17 @@
      "post": "P2 lucro do mês (telas 1 e 2)"
     }
    ]
+  },
+  {
+   "arquivo": "banco-imagens/natal_biscoito_1.jpg",
+   "categoria": "natal",
+   "produto": "biscoitos de Natal decorados em caixinha (mão entregando)",
+   "fonte": "nutbiscoitos.com.br (Google Imagens, 17/11; sem marca visível)",
+   "tamanho": [
+    1100,
+    1100
+   ],
+   "usos": []
   }
  ]
 }
