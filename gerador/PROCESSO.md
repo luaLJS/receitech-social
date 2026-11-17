@@ -7,9 +7,9 @@
 4. Baixar o canvas.json atual do artifact (read_file, slug 969fa822-132d-4a02-8ed1-b92e5c3beee1, path project/canvas.json) e salvar em /mnt/user-data/outputs/artifacts/969fa822-132d-4a02-8ed1-b92e5c3beee1/project/canvas.json. Sempre reler antes de publicar (a Luana pode ter editado).
 
 ## 1. Planejar (sem montar nada)
-- Escolher 2 temas: 2 carrosséis de 3 telas. Funcionalidades do Receitech que ainda não apareceram nos últimos dias (ver histórico em REGRAS.md). Exemplos: preço do produto, cardápio online, lista de compras, aba Lucro / retirada, lucro por canal (iFood), estoque de pronta-entrega, encomendas por data de entrega, gastos do negócio, precificação por foto, vendas por cliente (só se já existir no app).
-- Para cada post: como a funcionalidade funciona (1 ou 2 frases) + 2 ou 3 opções de frase da tela 1 (com a funcionalidade) + frases das telas 2 e 3 + layout (dos 21) + foto do banco.
-- Mandar tudo numa mensagem numerada (SendUserMessage) pedindo pra ela escolher. ESPERAR a resposta.
+- Escolher 2 temas: 2 posts de 1 ou 2 telas (nunca 3). Conferir no feed real (capas já postadas, ordem do Buffer) se a funcionalidade já apareceu. Funcionalidades do Receitech que ainda não apareceram nos últimos dias (ver histórico em REGRAS.md). Exemplos: preço do produto, cardápio online, lista de compras, aba Lucro / retirada, lucro por canal (iFood), estoque de pronta-entrega, encomendas por data de entrega, gastos do negócio, precificação por foto, vendas por cliente (só se já existir no app).
+- Um post de cada vez: como a funcionalidade funciona (1 ou 2 frases) + 2 ou 3 opções de frase da tela 1 (com a funcionalidade) + frase da tela 2 e o que aparece no celular. Mandar numa mensagem numerada (SendUserMessage) e ESPERAR a resposta antes do próximo post.
+- Layout: abrir os quadros do Feed proposto, simular o feed real com o post novo e mostrar as opções de layout desenhadas no canvas. Foto nova sempre que a do banco for parecida com uma já usada.
 
 ## 2. Montar
 - Usar os scripts de gerador/posts como base (c3.py, c3_s2.py, f1.py, f2.py mostram o padrão: tela do app em HTML + phone() + layout; feed.py/feed_new.py têm os 21 layouts).
