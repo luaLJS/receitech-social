@@ -7,7 +7,7 @@ MODE = sys.argv[1] if len(sys.argv) > 1 else "local"
 OUT = sys.argv[2] if len(sys.argv) > 2 else "/tmp/d1118"
 os.makedirs(OUT, exist_ok=True)
 BANK = "/home/claude/receitech-social/banco-imagens/"
-IMGS = {"CENOURA": "doce_bolocenoura_1.jpg"}
+IMGS = {"CENOURA": "doce_bolocenoura_1.jpg", "RENA": "natal_bolorena_1.jpg"}
 BLOBS = {"LOGOB": "/_blob/f2996fe4c9fb0951e6c5b11ec42e37da", "LOGOW": "/_blob/c900d55a8870af975f0e491905355cb1"}
 bf = "/home/claude/receitech-social/gerador/posts/d1118_blobs.json"
 if os.path.exists(bf):
@@ -101,10 +101,70 @@ def p1_s2():
     return box(CREAM, inner)
 
 
+# ================= Post 2 · prazo de encomenda no cardápio =================
+ITA = "font-family: 'Instrument Serif', Georgia, serif; font-style: italic"
+ALT_RENA = "Bolo de Natal decorado com chantilly, árvore de Natal e rena"
+P2_A = "Bolo de Natal pra amanhã?"
+P2_B = "No cardápio do Receitech, cada produto mostra com quantos dias a cliente precisa encomendar."
+
+
+def rena_bg():
+    return (f'<img src="{U("RENA")}" alt="" style="position: absolute; left: -20px; top: -20px; width: 580px; height: 760px; object-fit: cover; filter: blur(18px)">'
+            f'<img src="{U("RENA")}" alt="{ALT_RENA}" style="position: absolute; left: 0; top: 160px; width: 540px; height: 640px; object-fit: cover; object-position: 50% 0%; '
+            f'-webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 70px); mask-image: linear-gradient(to bottom, transparent 0, #000 70px)">')
+
+
+def p2_t3():
+    """T3: foto inteira + serifa itálica (texto no alto, sobre o fundo claro da foto)."""
+    inner = f'''{rena_bg()}
+<div style="position: absolute; left: 36px; right: 36px; top: 40px; text-align: center; {ITA}; color: {NAVY}; font-size: 52px; line-height: 1.0; letter-spacing: -0.5px">{P2_A}</div>
+<div style="position: absolute; left: 60px; right: 60px; top: 160px; text-align: center; color: {NAVY}; font-size: 16px; font-weight: 600; line-height: 1.35">{P2_B}</div>'''
+    return box("#EDEDF0", inner)
+
+
+def p2_n6():
+    """N6: caixa alta em bloco justificada, no alto da foto."""
+    inner = f'''{rena_bg()}
+<div style="position: absolute; left: 56px; right: 56px; top: 48px; text-align: justify; text-align-last: justify; font-weight: 700; color: {NAVY}; font-size: 40px; line-height: 1.02; word-spacing: 6px">BOLO DE NATAL PRA AMANHÃ?</div>
+<div style="position: absolute; left: 56px; right: 56px; top: 138px; color: {NAVY}; font-size: 15px; font-weight: 600; line-height: 1.35">{P2_B}</div>'''
+    return box("#EDEDF0", inner)
+
+
+def cardapio_screen():
+    close = svg('<path d="M6 6l12 12M18 6L6 18"></path>', 18, DARK, 2.4)
+    cal = svg('<rect x="4" y="5" width="16" height="15" rx="3"></rect><path d="M4 10h16M9 3v4M15 3v4"></path>', 18, BLUE, 2)
+    return f'''<div style="width: 390px; height: 844px; background: #98A2B3; {POP}; color: {DARK}; overflow: hidden; position: relative">
+<div style="position: absolute; left: 0; right: 0; top: 70px; bottom: 0; background: #FFFFFF; border-radius: 22px 22px 0 0; overflow: hidden">
+<div style="position: relative"><img src="{U("RENA")}" alt="Bolo de Natal decorado" style="width: 390px; height: 300px; object-fit: cover; object-position: 50% 70%">
+<span style="position: absolute; right: 14px; top: 14px; width: 36px; height: 36px; border-radius: 18px; background: #FFFFFF; display: flex; align-items: center; justify-content: center">{close}</span>
+<span style="position: absolute; left: 14px; bottom: 14px; padding: 5px 12px; border-radius: 20px; background: #FFFFFF; font-size: 13px; font-weight: 600; color: {BLUE}">Encomenda</span></div>
+<div style="padding: 18px 20px 0">
+<div style="font-size: 22px; font-weight: 600; letter-spacing: -0.4px">Bolo de Natal rena</div>
+<div style="margin-top: 6px; font-size: 14px; color: {SEC}; line-height: 1.4">Massa branca com recheio de brigadeiro branco e frutas vermelhas. 1,5 kg, serve 15 pessoas.</div>
+<div style="margin-top: 14px; display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 14px; background: {LBLUE}">{cal}<span style="font-size: 15px; font-weight: 500">Peça com <b style="font-weight: 700">3 dias</b> de antecedência</span></div>
+<div style="margin-top: 18px; display: flex; align-items: center; justify-content: space-between">
+<span style="font-size: 20px; font-weight: 600">R$ 180,00</span>
+<div style="display: flex; align-items: center; gap: 16px; border: 1px solid {DIV}; border-radius: 12px; padding: 6px 14px; font-size: 18px; font-weight: 600"><span style="color: #98A2B3">−</span><span>1</span><span style="color: {BLUE}">+</span></div></div>
+<div style="margin-top: 20px; height: 52px; border-radius: 14px; background: {BLUE}; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 600">Adicionar · R$ 180,00</div>
+</div></div>
+<div style="position: absolute; left: 0; right: 0; bottom: 8px; display: flex; justify-content: center"><div style="width: 134px; height: 5px; border-radius: 3px; background: {DARK}"></div></div>
+</div>'''
+
+
+def p2_s2():
+    inner = f'''<div style="position: absolute; left: 44px; right: 44px; top: 50px; color: #FFFFFF; font-size: 28px; font-weight: 600; line-height: 1.16; letter-spacing: -0.8px; text-wrap: balance">Você define o prazo de cada produto. A cliente vê antes de pedir.</div>
+<div style="position: absolute; left: 50%; top: 176px; transform: translateX(-50%)">{phone(cardapio_screen(), 500)}</div>
+<img src="{U("LOGOW")}" alt="receitech" style="position: absolute; left: 44px; bottom: 30px; height: 20px; width: auto">'''
+    return box(NAVY, inner)
+
+
 SLIDES = [
     ("D18_P1_opA", "18/11 · P1 · tela 1 · 11h (N2)", p1_n2),
     ("D18_P1_opB", "Reserva · N5 azul (guardar pra usar depois)", p1_n5),
     ("D18_P1_S2", "18/11 · P1 · tela 2 (custo da receita)", p1_s2),
+    ("D18_P2_opA", "18/11 · P2 · opção A (T3)", p2_t3),
+    ("D18_P2_opB", "18/11 · P2 · opção B (N6)", p2_n6),
+    ("D18_P2_S2", "18/11 · P2 · tela 2 (cardápio: prazo)", p2_s2),
 ]
 
 
