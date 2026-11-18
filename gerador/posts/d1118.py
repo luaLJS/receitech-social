@@ -37,14 +37,13 @@ def box(bg, inner):
 
 
 # ================= Post 1 · gás e energia no custo =================
-P1_SUB = "No Receitech, ele entra no custo de cada receita."
+P1_SUB = "No Receitech, ele entra no custo de cada receita automaticamente."
 
 
 def p1_n2():
     """N2: texto enorme + sublinhado, fundo céu, foto simples embaixo à direita."""
-    inner = f'''<div style="position: absolute; left: 34px; top: 34px; font-size: 12px; font-weight: 600; letter-spacing: 2px; color: {NAVY}">RECEITECH</div>
-<div style="position: absolute; left: 30px; right: 26px; top: 70px; {HVY}; font-weight: 900; color: {NAVY}; font-size: 84px; line-height: 0.92; letter-spacing: -4px">o gás do <span style="text-decoration: underline; text-decoration-thickness: 7px; text-underline-offset: 8px">forno</span> também é custo 🔥</div>
-<div style="position: absolute; left: 34px; top: 486px; width: 220px; font-size: 19px; font-weight: 600; line-height: 1.3; color: {NAVY}">{P1_SUB}</div>
+    inner = f'''<div style="position: absolute; left: 30px; right: 26px; top: 76px; {HVY}; font-weight: 900; color: {NAVY}; font-size: 84px; line-height: 0.92; letter-spacing: -4px">o gás do <span style="text-decoration: underline; text-decoration-thickness: 7px; text-underline-offset: 8px">forno</span> também é custo 🔥</div>
+<div style="position: absolute; left: 34px; top: 486px; width: 222px; font-size: 18px; font-weight: 600; line-height: 1.3; color: {NAVY}">{P1_SUB}</div>
 <img src="{U("CENOURA")}" alt="{ALT_CEN}" style="position: absolute; right: 34px; top: 444px; width: 230px; height: 230px; object-fit: cover; object-position: 50% 50%">'''
     return box(SKY, inner)
 
@@ -103,8 +102,8 @@ def p1_s2():
 
 
 SLIDES = [
-    ("D18_P1_opA", "18/11 · P1 · opção A (N2)", p1_n2),
-    ("D18_P1_opB", "18/11 · P1 · opção B (N5)", p1_n5),
+    ("D18_P1_opA", "18/11 · P1 · tela 1 · 11h (N2)", p1_n2),
+    ("D18_P1_opB", "Reserva · N5 azul (guardar pra usar depois)", p1_n5),
     ("D18_P1_S2", "18/11 · P1 · tela 2 (custo da receita)", p1_s2),
 ]
 
