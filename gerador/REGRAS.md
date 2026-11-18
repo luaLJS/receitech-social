@@ -86,3 +86,4 @@ Regras definidas pela Luana. Seguir à risca. Em caso de dúvida, perguntar a el
 | 15/11 | C1 (19h20) | Sinal da encomenda de Natal: quanto falta receber + só entra no lucro quando pago e entregue | N9 azul-claro | natal_encomenda_1 (telas 1, 2 e 3) |
 | 16/11 | P1 (15h) | Formas de uso: a mesma massa vira bolo, fatia e bolo de pote (2 telas) | T1 branco | doce_bolo_3, doce_bolofatia_1, doce_bolopote_3 |
 | 16/11 | P2 (18h) | Lucro do mês e retirada: "Vendeu muito e o dinheiro sumiu?" (2 telas; ângulo novo do tema de 12/11 F2, pedido da Luana) | N3 (caixa alta condensada na foto) | natal_docinhos_1 |
+| 18/11 | P1 (16h18, postado na hora a pedido dela) | Gás e energia no custo da receita (forno e batedeira por tempo de uso) (2 telas) | N2 céu, sem "RECEITECH" no topo (N5 azul guardado no canvas como reserva) | doce_bolocenoura_1 |

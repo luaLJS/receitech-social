@@ -438,7 +438,12 @@
     878,
     630
    ],
-   "usos": []
+   "usos": [
+    {
+     "data": "2026-11-18",
+     "post": "P1 gás e energia no custo (telas 1 e 2)"
+    }
+   ]
   }
  ]
 }
