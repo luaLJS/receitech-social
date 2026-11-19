@@ -460,6 +460,17 @@
      "post": "P1 prazo de encomenda no cardápio (telas 1 e 2)"
     }
    ]
+  },
+  {
+   "arquivo": "banco-imagens/natal_pave_1.jpg",
+   "categoria": "natal",
+   "produto": "pavê de chocolate na travessa (fundo vermelho)",
+   "fonte": "Instagram via Google Imagens (19/11; miniatura do Google, 821x548; sem marca visível)",
+   "tamanho": [
+    821,
+    548
+   ],
+   "usos": []
   }
  ]
 }
