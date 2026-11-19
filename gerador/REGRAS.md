@@ -8,6 +8,7 @@ Regras definidas pela Luana. Seguir à risca. Em caso de dúvida, perguntar a el
 - Não usar travessão (—) nos textos.
 - Executar (publicar, agendar, enviar) só depois de um "OK" explícito dela.
 - Mostrar as imagens no canvas do Claude Design e também no chat.
+- Mandar um post de cada vez já com a imagem desenhada (uma tela 1 por opção de texto, lado a lado com a tela 2) e as opções de texto na mesma mensagem: "fica mais fácil de ler e decidir" (Luana, 19/11).
 
 ## Formato do dia
 - 2 posts por dia nas duas redes (mesma imagem, mesma legenda). Cada post tem 1 ou 2 telas, nunca 3 (Luana em 16/11: "não faz sentido, tem que ser ou 1 ou 2 telas"; ela não aprovou o formato de 3 telas).
@@ -87,3 +88,4 @@ Regras definidas pela Luana. Seguir à risca. Em caso de dúvida, perguntar a el
 | 16/11 | P1 (15h) | Formas de uso: a mesma massa vira bolo, fatia e bolo de pote (2 telas) | T1 branco | doce_bolo_3, doce_bolofatia_1, doce_bolopote_3 |
 | 16/11 | P2 (18h) | Lucro do mês e retirada: "Vendeu muito e o dinheiro sumiu?" (2 telas; ângulo novo do tema de 12/11 F2, pedido da Luana) | N3 (caixa alta condensada na foto) | natal_docinhos_1 |
 | 18/11 | P1 (16h18, postado na hora a pedido dela) | Gás e energia no custo da receita (forno e batedeira por tempo de uso) (2 telas) | N2 céu, sem "RECEITECH" no topo (N5 azul guardado no canvas como reserva) | doce_bolocenoura_1 |
+| 19/11 | P1 (19h) | Prazo de encomenda no cardápio: "Seu cliente sabe com quanto tempo tem que encomendar?" (2 telas; retomado do P2 de 18/11, que não foi postado) | T3 (serifa itálica na foto) | natal_bolorena_1 |

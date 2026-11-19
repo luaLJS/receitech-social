@@ -454,7 +454,12 @@
     900,
     1066
    ],
-   "usos": []
+   "usos": [
+    {
+     "data": "2026-11-19",
+     "post": "P1 prazo de encomenda no cardápio (telas 1 e 2)"
+    }
+   ]
   }
  ]
 }
