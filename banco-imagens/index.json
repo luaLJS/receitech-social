@@ -470,7 +470,12 @@
     821,
     548
    ],
-   "usos": []
+   "usos": [
+    {
+     "data": "2026-11-20",
+     "post": "P1 orçamento de encomenda (tela 1 + miniatura no app)"
+    }
+   ]
   }
  ]
 }

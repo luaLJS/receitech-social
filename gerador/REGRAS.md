@@ -89,3 +89,4 @@ Regras definidas pela Luana. Seguir à risca. Em caso de dúvida, perguntar a el
 | 16/11 | P2 (18h) | Lucro do mês e retirada: "Vendeu muito e o dinheiro sumiu?" (2 telas; ângulo novo do tema de 12/11 F2, pedido da Luana) | N3 (caixa alta condensada na foto) | natal_docinhos_1 |
 | 18/11 | P1 (16h18, postado na hora a pedido dela) | Gás e energia no custo da receita (forno e batedeira por tempo de uso) (2 telas) | N2 céu, sem "RECEITECH" no topo (N5 azul guardado no canvas como reserva) | doce_bolocenoura_1 |
 | 19/11 | P1 (19h) | Prazo de encomenda no cardápio: "Seu cliente sabe com quanto tempo tem que encomendar?" (2 telas; retomado do P2 de 18/11, que não foi postado) | T3 (serifa itálica na foto) | natal_bolorena_1 |
+| 20/11 | P1 (18h) | Orçamento de encomenda: "NATAL · O ORÇAMENTO JÁ SAI COM OS SEUS PREÇOS" + tela 2 "Aceitaram? Toque em “Confirmar encomenda”..." (2 telas; retomado do P2 de 19/11) | N5 azul | natal_pave_1 (tela 1 + miniatura no app) |
