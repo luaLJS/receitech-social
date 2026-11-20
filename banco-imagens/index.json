@@ -476,6 +476,17 @@
      "post": "P1 orçamento de encomenda (tela 1 + miniatura no app)"
     }
    ]
+  },
+  {
+   "arquivo": "banco-imagens/doce_bolomorango_1.jpg",
+   "categoria": "doce",
+   "produto": "fatia de bolo de morango com camadas (massa branca, creme com geleia, chantilly e morangos)",
+   "fonte": "minhasreceitinhas.com.br (Google Imagens, 20/11; sem marca visível)",
+   "tamanho": [
+    1024,
+    1280
+   ],
+   "usos": []
   }
  ]
 }
