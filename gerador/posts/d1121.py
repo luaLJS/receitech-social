@@ -22,12 +22,40 @@ def p1_n6(k):
     return box(NAVY, inner)
 
 
+# Luana (21/11): tela 1 = frase c no N1. Tela 2 precisa dizer que o custo e o preço saem sozinhos.
+# Tela do app: caixa R$ 9,20 pra custo fechar R$ 70,00; preço por produto com margem padrão 65% = 70 / 0,35 = R$ 200,00.
+S2_OPTS = {
+    "a": "Você cadastra as receitas. O custo e o preço do bolo saem sozinhos.",
+    "b": "O custo do bolo sai sozinho, até a caixa. E o preço já vem junto.",
+    "c": "Nada de calculadora: o Receitech soma as três receitas e já te dá o preço.",
+}
+
+
+def receitas_screen2():
+    h = receitas_screen()
+    h = h.replace("R$ 7,20", "R$ 9,20").replace("R$ 68,00", "R$ 70,00")
+    a = h.index('<div style="display: flex; justify-content: space-between; padding: 14px 2px 4px')
+    b = h.index('<div style="position: absolute; left: 0; right: 0; bottom: 8px')
+    mini = lambda l, v, c=DARK: f'<div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 13px; color: {SEC}">{l}</span><span style="font-size: 18px; font-weight: 600; color: {c}">{v}</span></div>'
+    new = (f'<div style="margin-top: 12px; padding: 0 2px; display: flex; justify-content: space-between; align-items: baseline">'
+           f'<span style="font-size: 15px; font-weight: 500">Preço por produto</span><span style="font-size: 22px; font-weight: 700">R$ 200,00</span></div>'
+           f'<div style="margin-top: 10px; padding: 0 2px; display: flex; justify-content: space-between">'
+           f'{mini("Lucro por produto", "R$ 130,00", "#067647")}{mini("Margem", "65%")}</div>\n</div>\n')
+    return h[:a] + new + h[b:]
+
+
+def s2_opt(k):
+    inner = f'''<div style="position: absolute; left: 44px; right: 44px; top: 50px; color: {NAVY}; font-size: 28px; font-weight: 600; line-height: 1.16; letter-spacing: -0.8px; text-wrap: balance">{S2_OPTS[k]}</div>
+<div style="position: absolute; left: 50%; top: 176px; transform: translateX(-50%)">{phone(receitas_screen2(), 500)}</div>
+<img src="{U("LOGOB")}" alt="receitech" style="position: absolute; right: 44px; bottom: 30px; height: 20px; width: auto">'''
+    return box(SKY, inner)
+
+
 SLIDES21 = [
-    ("D21_P1_opA", "21/11 · P1 · opção a (N1)", lambda: p2_n1("a")),
-    ("D21_P1_opB", "21/11 · P1 · opção b (N1)", lambda: p2_n1("b")),
-    ("D21_P1_opC", "21/11 · P1 · opção c (N1)", lambda: p2_n1("c")),
-    ("D21_P1_N6", "21/11 · P1 · layout alternativo (N6, frase a)", lambda: p1_n6("a")),
-    ("D21_P1_S2", "21/11 · P1 · tela 2 (receitas do produto)", p2_s2),
+    ("D21_P1_opC", "21/11 · P1 · tela 1 (N1, frase c) · escolhida", lambda: p2_n1("c")),
+    ("D21_P1_S2a", "21/11 · P1 · tela 2 · frase 1", lambda: s2_opt("a")),
+    ("D21_P1_S2b", "21/11 · P1 · tela 2 · frase 2", lambda: s2_opt("b")),
+    ("D21_P1_S2c", "21/11 · P1 · tela 2 · frase 3", lambda: s2_opt("c")),
 ]
 
 if __name__ == "__main__":
