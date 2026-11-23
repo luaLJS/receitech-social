@@ -19,6 +19,7 @@ T1_OPTS = {
 T2_OPTS = {
     "x": "Escolha as receitas do bolo e a caixa. O custo e o preço saem na hora.",
     "y": "Cada receita com o seu custo, até a caixa. O preço do bolo sai sozinho.",
+    "f": "Selecione as receitas do bolo. A precificação sai na hora.",
 }
 
 
@@ -42,6 +43,12 @@ def p1_t2(k):
     return box(SKY, inner)
 
 
+# Luana (23/11): tela 1 = 1b; tela 2 = frase dela, sem mudar ("Selecione as receitas do bolo. A precificação sai na hora.")
+FINAL23 = [
+    ("D23_P1_S1", "23/11 · P1 · tela 1 (N1, escolhida)", lambda: p1_t1("b")),
+    ("D23_P1_S2", "23/11 · P1 · tela 2 (escolhida)", lambda: p1_t2("f")),
+]
+
 SLIDES23 = [
     ("D23_P1_T1a", "23/11 · P1 · tela 1 · 1a", lambda: p1_t1("a")),
     ("D23_P1_T1b", "23/11 · P1 · tela 1 · 1b", lambda: p1_t1("b")),
@@ -51,7 +58,7 @@ SLIDES23 = [
 ]
 
 if __name__ == "__main__":
-    for code, title, fn in SLIDES23:
+    for code, title, fn in (FINAL23 if os.environ.get("FINAL") else SLIDES23):
         html = fn()
         if MODE == "canvas":
             doc = page_f(title, html, PW, PH)
