@@ -144,7 +144,7 @@ P2_SLIDES = [
 def p2_single(k):
     t1, t2, sub = P2_T1[k]
     txt = t1.upper() + "<br>" + t2.upper()
-    top = {"a": 250, "b": 190, "c": 222}[k]
+    top = TOPS[k]
     inner = f"""<img src="{U("PUDIM")}" alt="{ALT_PUD}" style="position: absolute; left: 0; top: {top}px; width: {PW}px; height: {PH - top}px; object-fit: cover; object-position: 0% 50%">
 <div style="position: absolute; left: 0; right: 0; top: {top}px; height: 80px; background: linear-gradient({NAVY}, rgba(16,24,40,0))"></div>
 <div style="position: absolute; left: 40px; right: 40px; top: 40px; display: flex; flex-direction: column; gap: 14px">
@@ -160,8 +160,23 @@ SINGLE_SLIDES = [
     ("D23_P2_F1c", "23/11 · P2 · foto única · 1c", lambda: p2_single("c")),
 ]
 
+
+# Luana (23/11): "odiei os textos" da foto única. Textos novos: situação real (cliente paga no cartão) + o que o app faz.
+SUB_P2 = "No Receitech, quando a venda é no cartão, a taxa da maquininha já entra no valor que o cliente paga."
+P2_T1.update({
+    "d": ("Cliente pagou no cartão?", "A taxa entra no valor dele, não no seu.", SUB_P2),
+    "e": ("Quanto cobrar a mais", "no cartão? A conta já sai pronta.", SUB_P2),
+    "f": ("A maquininha desconta.", "Você recebe o valor inteiro.", SUB_P2),
+})
+TOPS = {"a": 250, "b": 190, "c": 222, "d": 222, "e": 222, "f": 222}
+NEW_SINGLE = [
+    ("D23_P2_F2a", "23/11 · P2 · foto única · 2a", lambda: p2_single("d")),
+    ("D23_P2_F2b", "23/11 · P2 · foto única · 2b", lambda: p2_single("e")),
+    ("D23_P2_F2c", "23/11 · P2 · foto única · 2c", lambda: p2_single("f")),
+]
+
 if __name__ == "__main__":
-    for code, title, fn in (FINAL23 if os.environ.get("FINAL") else P2_SLIDES if os.environ.get("P2") else SINGLE_SLIDES if os.environ.get("SINGLE") else SLIDES23):
+    for code, title, fn in (FINAL23 if os.environ.get("FINAL") else P2_SLIDES if os.environ.get("P2") else SINGLE_SLIDES if os.environ.get("SINGLE") else NEW_SINGLE if os.environ.get("NEW") else SLIDES23):
         html = fn()
         if MODE == "canvas":
             doc = page_f(title, html, PW, PH)
