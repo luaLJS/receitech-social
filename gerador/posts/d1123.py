@@ -139,8 +139,29 @@ P2_SLIDES = [
     ("D23_P2_S2", "23/11 · P2 · tela 2 (pagamento)", p2_s2),
 ]
 
+
+# Luana (23/11): a partir de hoje, 1 carrossel (2 telas) + 1 foto única por dia. Post 2 vira foto única.
+def p2_single(k):
+    t1, t2, sub = P2_T1[k]
+    txt = t1.upper() + "<br>" + t2.upper()
+    top = {"a": 250, "b": 190, "c": 222}[k]
+    inner = f"""<img src="{U("PUDIM")}" alt="{ALT_PUD}" style="position: absolute; left: 0; top: {top}px; width: {PW}px; height: {PH - top}px; object-fit: cover; object-position: 0% 50%">
+<div style="position: absolute; left: 0; right: 0; top: {top}px; height: 80px; background: linear-gradient({NAVY}, rgba(16,24,40,0))"></div>
+<div style="position: absolute; left: 40px; right: 40px; top: 40px; display: flex; flex-direction: column; gap: 14px">
+<div style="{POP}; font-weight: 600; color: #FFF4D2; font-size: 31px; line-height: 1.1; letter-spacing: 0.3px">{txt}</div>
+<div style="{POP}; font-weight: 500; color: #FFFFFF; font-size: 15px; line-height: 1.4; max-width: 440px">{sub}</div></div>
+<div style="position: absolute; right: 26px; top: {top + 34}px">{phone(pagamento_screen(), 560)}</div>"""
+    return box(NAVY, inner)
+
+
+SINGLE_SLIDES = [
+    ("D23_P2_F1a", "23/11 · P2 · foto única · 1a", lambda: p2_single("a")),
+    ("D23_P2_F1b", "23/11 · P2 · foto única · 1b", lambda: p2_single("b")),
+    ("D23_P2_F1c", "23/11 · P2 · foto única · 1c", lambda: p2_single("c")),
+]
+
 if __name__ == "__main__":
-    for code, title, fn in (FINAL23 if os.environ.get("FINAL") else P2_SLIDES if os.environ.get("P2") else SLIDES23):
+    for code, title, fn in (FINAL23 if os.environ.get("FINAL") else P2_SLIDES if os.environ.get("P2") else SINGLE_SLIDES if os.environ.get("SINGLE") else SLIDES23):
         html = fn()
         if MODE == "canvas":
             doc = page_f(title, html, PW, PH)

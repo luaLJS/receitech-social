@@ -12,7 +12,7 @@ Regras definidas pela Luana. Seguir à risca. Em caso de dúvida, perguntar a el
 - Mandar um post de cada vez já com a imagem desenhada (uma tela 1 por opção de texto, lado a lado com a tela 2) e as opções de texto na mesma mensagem: "fica mais fácil de ler e decidir" (Luana, 19/11).
 
 ## Formato do dia
-- 2 posts por dia nas duas redes (mesma imagem, mesma legenda). Cada post tem 1 ou 2 telas, nunca 3 (Luana em 16/11: "não faz sentido, tem que ser ou 1 ou 2 telas"; ela não aprovou o formato de 3 telas).
+- 2 posts por dia nas duas redes (mesma imagem, mesma legenda): desde 23/11, 1 carrossel de 2 telas + 1 foto única (Luana, 23/11). Cada post tem 1 ou 2 telas, nunca 3 (Luana em 16/11: "não faz sentido, tem que ser ou 1 ou 2 telas"; ela não aprovou o formato de 3 telas).
 - Carrossel: tela 1 = gancho, tela 2 = tela do app no celular (mínimo 2 telas).
 - Foto única: frase direta + tela do app no celular + foto de comida. Precisa fazer sentido sozinha no feed.
 - Cada post é um par problema → funcionalidade do Receitech. Nunca prometer algo que o app não faz.
