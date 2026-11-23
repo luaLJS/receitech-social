@@ -6,6 +6,7 @@ Regras definidas pela Luana. Seguir à risca. Em caso de dúvida, perguntar a el
 - Sempre numerar as respostas pelos subtópicos, sem repetir número nem letra na mesma resposta (ela responde citando o número).
 - Feedback maximamente crítico, sem suavizar. Linguagem direta, sem jargão.
 - Não usar travessão (—) nos textos.
+- "Precificação" pode ser usada nos posts (Luana, 23/11: todo mundo conhece a palavra).
 - Executar (publicar, agendar, enviar) só depois de um "OK" explícito dela.
 - Mostrar as imagens no canvas do Claude Design e também no chat.
 - Mandar um post de cada vez já com a imagem desenhada (uma tela 1 por opção de texto, lado a lado com a tela 2) e as opções de texto na mesma mensagem: "fica mais fácil de ler e decidir" (Luana, 19/11).
@@ -90,3 +91,4 @@ Regras definidas pela Luana. Seguir à risca. Em caso de dúvida, perguntar a el
 | 18/11 | P1 (16h18, postado na hora a pedido dela) | Gás e energia no custo da receita (forno e batedeira por tempo de uso) (2 telas) | N2 céu, sem "RECEITECH" no topo (N5 azul guardado no canvas como reserva) | doce_bolocenoura_1 |
 | 19/11 | P1 (19h) | Prazo de encomenda no cardápio: "Seu cliente sabe com quanto tempo tem que encomendar?" (2 telas; retomado do P2 de 18/11, que não foi postado) | T3 (serifa itálica na foto) | natal_bolorena_1 |
 | 20/11 | P1 (18h) | Orçamento de encomenda: "NATAL · O ORÇAMENTO JÁ SAI COM OS SEUS PREÇOS" + tela 2 "Aceitaram? Toque em “Confirmar encomenda”..." (2 telas; retomado do P2 de 19/11) | N5 azul | natal_pave_1 (tela 1 + miniatura no app) |
+| 23/11 | P1 (11h) | Mais de uma receita no mesmo produto: "Massa, recheio e cobertura. Quanto custa o bolo inteiro?" + tela 2 "Selecione as receitas do bolo. A precificação sai na hora." (2 telas; retomado de 21 e 22/11; no Instagram o post de 20/11 deu erro de conta restrita) | N1 branco (texto pesado + etiquetas nas camadas) | doce_redvelvet_1 (tela 1 + miniatura no app) |

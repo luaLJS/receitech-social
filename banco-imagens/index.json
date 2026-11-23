@@ -497,7 +497,12 @@
     1200,
     901
    ],
-   "usos": []
+   "usos": [
+    {
+     "data": "2026-11-23",
+     "post": "P1 mais de uma receita no mesmo produto (tela 1 + miniatura no app)"
+    }
+   ]
   }
  ]
 }
