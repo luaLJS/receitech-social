@@ -57,8 +57,90 @@ SLIDES23 = [
     ("D23_P1_T2y", "23/11 · P1 · tela 2 · 2b", lambda: p1_t2("y")),
 ]
 
+# ================= Post 2 · taxa do cartão repassada ao cliente =================
+IMGS["PUDIM"] = "doce_pudim_1.jpg"
+BLOBS["PUDIM"] = "/_blob/aef6ba8e07d968c0e0df6c93c628e639"
+ALT_PUD = "Pudim de leite com calda de caramelo e uma fatia servida num prato"
+P2_T1 = {
+    "a": ("Vendeu no crédito?", "A taxa da maquininha pode ir pro total do cliente.", "No Receitech, você liga “Repassar taxa” na venda e o total já sai com a taxa somada."),
+    "b": ("Pudim de R$ 90 no crédito.", "Quem paga a taxa?", "No Receitech, você liga “Repassar taxa” na venda e o total do cliente já sai com a taxa somada."),
+    "c": ("A taxa do cartão", "não precisa sair do seu lucro.", "No Receitech, você liga “Repassar taxa” na venda e o total do cliente já sai com a taxa somada."),
+}
+P2_T2 = "Ligou “Repassar taxa”, o total do cliente já vem com a taxa. Você recebe os R$ 90 inteiros."
+
+
+def p2_n6(k):
+    t1, t2, sub = P2_T1[k]
+    txt = t1.upper() + "<br>" + t2.upper()
+    top = {"a": 250, "b": 190, "c": 222}[k]
+    inner = f'''<img src="{U("PUDIM")}" alt="{ALT_PUD}" style="position: absolute; left: 0; top: {top}px; width: {PW}px; height: {PH - top}px; object-fit: cover; object-position: 22% 50%">
+<div style="position: absolute; left: 0; right: 0; top: {top}px; height: 90px; background: linear-gradient({NAVY}, rgba(16,24,40,0))"></div>
+<div style="position: absolute; left: 40px; right: 40px; top: 40px; display: flex; flex-direction: column; gap: 14px">
+<div style="{POP}; font-weight: 600; color: #FFF4D2; font-size: 31px; line-height: 1.1; letter-spacing: 0.3px">{txt}</div>
+<div style="{POP}; font-weight: 500; color: #FFFFFF; font-size: 15px; line-height: 1.4; max-width: 440px">{sub}</div></div>'''
+    return box(NAVY, inner)
+
+
+def pagamento_screen():
+    back = svg('<path d="M15 5l-7 7 7 7"></path>', 20, DARK, 2.4)
+
+    def chip(t, on=False):
+        st = f"background: {BLUE}; color: #FFFFFF; border: 1px solid {BLUE}" if on else f"background: #FFFFFF; color: {DARK}; border: 1px solid #D0D5DD"
+        return f'<span style="padding: 8px 14px; border-radius: 20px; font-size: 15px; font-weight: 500; {st}">{t}</span>'
+
+    def head(t):
+        return f'<div style="padding: 18px 0 8px; font-size: 13px; font-weight: 600; color: {SEC}; letter-spacing: 0.4px">{t}</div>'
+
+    def line(l, v, bold=False, color=None):
+        w = 700 if bold else 500
+        c = color or DARK
+        return f'<div style="display: flex; justify-content: space-between; padding: 5px 0; font-size: {17 if bold else 15}px"><span style="font-weight: {w}">{l}</span><span style="font-weight: {w}; color: {c}">{v}</span></div>'
+    switch = f'<span style="width: 46px; height: 28px; border-radius: 14px; background: {BLUE}; position: relative; flex: none"><span style="position: absolute; right: 3px; top: 3px; width: 22px; height: 22px; border-radius: 11px; background: #FFFFFF"></span></span>'
+    return f'''<div style="width: 390px; height: 844px; background: #FFFFFF; {POP}; color: {DARK}; overflow: hidden; position: relative">
+<div style="height: 54px"></div>
+<div style="height: 48px; display: grid; grid-template-columns: 48px 1fr 48px; align-items: center; padding: 0 6px">
+<div style="display: flex; justify-content: center">{back}</div><span style="text-align: center; font-size: 18px; font-weight: 700">Pagamento</span><span></span></div>
+<div style="padding: 0 20px">
+{head("PRODUTOS")}
+<div style="display: flex; align-items: center; gap: 12px; padding: 4px 0 12px; border-bottom: 1px solid {DIV}">
+<img src="{U("PUDIM")}" alt="Pudim de leite" style="width: 52px; height: 52px; border-radius: 12px; object-fit: cover; object-position: 20% 40%">
+<div style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px; font-weight: 600">Pudim de leite grande</span><span style="font-size: 13px; color: {SEC}">1 unidade</span></div>
+<span style="font-size: 16px; font-weight: 600">R$ 90,00</span></div>
+{head("FORMA DE PAGAMENTO")}
+<div style="display: flex; gap: 8px; flex-wrap: wrap">{chip("Pix")}{chip("Débito")}{chip("Crédito", True)}{chip("Dinheiro")}</div>
+<div style="margin-top: 16px; padding: 14px 16px; border-radius: 16px; border: 1px solid {DIV}; display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px; font-weight: 600">Repassar taxa ao cliente</span><span style="font-size: 13px; color: {SEC}">Taxa do crédito: 4,99%</span></div>{switch}</div>
+<div style="margin-top: 16px; border-radius: 16px; background: {LBLUE}; padding: 12px 16px">
+{line("Total dos produtos", "R$ 90,00")}
+{line("Taxa do cartão", "+ R$ 4,73")}
+<div style="height: 1px; background: #C7D7EE; margin: 6px 0"></div>
+{line("Total a pagar", "R$ 94,73", True, BLUE)}</div>
+<div style="position: absolute; left: 20px; right: 20px; bottom: 34px; height: 52px; border-radius: 14px; background: {BLUE}; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 600">Salvar encomenda</div>
+</div>
+<div style="position: absolute; left: 0; right: 0; bottom: 8px; display: flex; justify-content: center"><div style="width: 134px; height: 5px; border-radius: 3px; background: {DARK}"></div></div>
+</div>'''
+
+
+# conta: total a pagar = 90 / (1 - 0,0499) = 94,73; taxa = 94,73 x 4,99% = 4,73; 94,73 - 4,73 = 90,00
+assert abs(90 / (1 - 0.0499) - 94.73) < 0.005 and abs(94.73 * 0.0499 - 4.73) < 0.005
+
+
+def p2_s2():
+    inner = f'''<div style="position: absolute; left: 44px; right: 44px; top: 46px; color: {NAVY}; font-size: 27px; font-weight: 600; line-height: 1.16; letter-spacing: -0.8px; text-wrap: balance">{P2_T2}</div>
+<div style="position: absolute; left: 50%; top: 188px; transform: translateX(-50%)">{phone(pagamento_screen(), 490)}</div>
+<img src="{U("LOGOB")}" alt="receitech" style="position: absolute; right: 44px; bottom: 26px; height: 20px; width: auto">'''
+    return box(CREAM, inner)
+
+
+P2_SLIDES = [
+    ("D23_P2_T1a", "23/11 · P2 · tela 1 · 1a (N6)", lambda: p2_n6("a")),
+    ("D23_P2_T1b", "23/11 · P2 · tela 1 · 1b (N6)", lambda: p2_n6("b")),
+    ("D23_P2_T1c", "23/11 · P2 · tela 1 · 1c (N6)", lambda: p2_n6("c")),
+    ("D23_P2_S2", "23/11 · P2 · tela 2 (pagamento)", p2_s2),
+]
+
 if __name__ == "__main__":
-    for code, title, fn in (FINAL23 if os.environ.get("FINAL") else SLIDES23):
+    for code, title, fn in (FINAL23 if os.environ.get("FINAL") else P2_SLIDES if os.environ.get("P2") else SLIDES23):
         html = fn()
         if MODE == "canvas":
             doc = page_f(title, html, PW, PH)

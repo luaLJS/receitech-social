@@ -503,6 +503,17 @@
      "post": "P1 mais de uma receita no mesmo produto (tela 1 + miniatura no app)"
     }
    ]
+  },
+  {
+   "arquivo": "banco-imagens/doce_pudim_1.jpg",
+   "categoria": "doce",
+   "produto": "pudim de leite com calda, inteiro e com fatia servida em prato (mesa de madeira)",
+   "fonte": "i.panelinha.com.br (Google Imagens, 23/11; sem marca visível)",
+   "tamanho": [
+    1140,
+    760
+   ],
+   "usos": []
   }
  ]
 }
