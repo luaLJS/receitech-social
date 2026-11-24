@@ -32,7 +32,7 @@ def p2_n5(k):
 <div style="position: absolute; left: 150px; right: 50px; top: 50px; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: {SKY}">RECEITECH MOSTRA</div>
 <div style="position: absolute; left: 150px; right: 46px; top: 66px; {CND}; color: #FFFFFF; font-size: 31px; line-height: 1.02">{title}</div>
 <img src="{U("MEL")}" alt="{ALT_MEL}" style="position: absolute; left: 50px; top: {168 if k != "b" else 176}px; width: 440px; height: {400 if k != "b" else 392}px; object-fit: cover; object-position: 50% 55%; border-radius: 16px">
-<div style="position: absolute; left: 56px; right: 56px; bottom: 44px; text-align: center; font-size: 14px; font-weight: 600; line-height: 1.35; color: #FFFFFF">{SUB_INV}</div>'''
+<div style="position: absolute; left: 50px; right: 50px; bottom: 44px; text-align: center; text-wrap: balance; font-size: 14px; font-weight: 600; line-height: 1.35; color: #FFFFFF">{SUB_INV}</div>'''
     return box("#FFFFFF", inner)
 
 
@@ -91,8 +91,8 @@ assert 7200 - 2520 == 4680 and 4680 - 900 == 3780
 
 
 def p2_inv_s2():
-    inner = f'''<div style="position: absolute; left: 44px; right: 44px; top: 50px; color: {NAVY}; font-size: 28px; font-weight: 600; line-height: 1.16; letter-spacing: -0.8px; text-wrap: balance">{S2_INV}</div>
-<div style="position: absolute; left: 50%; top: 176px; transform: translateX(-50%)">{phone(lucro_inv_screen(), 500)}</div>
+    inner = f'''<div style="position: absolute; left: 40px; right: 40px; top: 42px; color: {NAVY}; font-size: 25px; font-weight: 600; line-height: 1.18; letter-spacing: -0.6px; text-wrap: balance">{S2_INV}</div>
+<div style="position: absolute; left: 50%; top: 186px; transform: translateX(-50%)">{phone(lucro_inv_screen(), 490)}</div>
 <img src="{U("LOGOB")}" alt="receitech" style="position: absolute; right: 44px; bottom: 30px; height: 20px; width: auto">'''
     return box(SKY, inner)
 
