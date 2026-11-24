@@ -12,7 +12,7 @@ sys.argv = _argv
 os.makedirs(OUT, exist_ok=True)
 
 IMGS["MEL"] = "natal_paodemel_1.jpg"
-BLOBS["MEL"] = "/_blob/PENDENTE_MEL"
+BLOBS["MEL"] = "/_blob/aa7d42e9fa57bb9a61d0bc6e7ca0adab"
 ALT_MEL = "Pão de mel de Natal coberto de chocolate, um deles mordido mostrando o recheio de doce de leite"
 
 # ================= Post 2 · investimentos no negócio =================
