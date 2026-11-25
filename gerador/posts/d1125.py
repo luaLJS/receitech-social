@@ -277,9 +277,8 @@ ALT_COOK2 = "Caixa de presente com seis cookies recheados vista de cima, escrito
 
 def p1_meta7():
     a, b = T5OPTS["s"]
-    inner = f'''<div style="position: absolute; left: 44px; top: 40px; {POP}; font-size: 12px; font-weight: 600; letter-spacing: 3px; color: {BLUE}">NOVO NO RECEITECH · META DE VENDAS</div>
-<div style="position: absolute; left: 44px; right: 40px; top: 64px; display: flex; flex-direction: column; gap: 14px">
-<div style="{POP}; color: {NAVY}; font-size: 35px; font-weight: 800; line-height: 1.05; letter-spacing: -1.4px">{a}<br><span style="color: {BLUE}">{b}</span></div>
+    inner = f'''<div style="position: absolute; left: 44px; right: 40px; top: 48px; display: flex; flex-direction: column; gap: 18px">
+<div style="{POP}; color: {NAVY}; font-size: 35px; font-weight: 800; line-height: 1.05; letter-spacing: -1.4px">{a}<span style="display: block; margin-top: 14px; color: {BLUE}">{b}</span></div>
 <div style="{POP}; color: {NAVY}; font-size: 14px; font-weight: 500; line-height: 1.4">{SUB5}</div></div>
 <img src="{U("COOK2")}" alt="{ALT_COOK2}" style="position: absolute; left: 32px; top: 424px; width: 280px; height: 174px; object-fit: cover; border-radius: 14px">
 <div style="position: absolute; left: 318px; top: 304px">{phone(meta_screen(), 400)}</div>'''
