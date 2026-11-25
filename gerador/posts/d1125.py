@@ -53,7 +53,7 @@ SLIDES25 = [
 ]
 
 if __name__ == "__main__":
-    for code, title, fn in ([] if (os.environ.get("V3") or os.environ.get("V4") or os.environ.get("V5")) else SLIDES25B if os.environ.get('V2') else SLIDES25):
+    for code, title, fn in ([] if (os.environ.get("V3") or os.environ.get("V4") or os.environ.get("V5") or os.environ.get("V6")) else SLIDES25B if os.environ.get('V2') else SLIDES25):
         html = fn()
         if MODE == "canvas":
             doc = page_f(title, html, PW, PH)
@@ -227,7 +227,7 @@ SLIDES25E = [
     ("D25_P1_M2", "25/11 · P1 · 4.2 (meta de vendas)", lambda: p1_meta("q")),
     ("D25_P1_M3", "25/11 · P1 · 4.3 (meta de vendas)", lambda: p1_meta("r")),
 ]
-if __name__ == "__main__" and os.environ.get("V5"):
+if __name__ == "__main__" and os.environ.get("V5") and not os.environ.get("V6"):
     for code, title, fn in SLIDES25E:
         html = fn()
         if MODE == "canvas":
@@ -237,3 +237,33 @@ if __name__ == "__main__" and os.environ.get("V5"):
         else:
             open(os.path.join(OUT, code + ".html"), "w").write(
                 f"<html><head><meta charset='utf-8'><link href='{FONTS}' rel='stylesheet'><style>body{{margin:0}}</style></head><body>{html}</body></html>")
+
+
+# ================= Rodada 6 (Luana 25/11: frase 2 com salário de R$ 3.000; foto que remeta a venda de doces) =================
+IMGS["COOK"] = "doce_cookie_1.jpg"
+BLOBS["COOK"] = "/_blob/807c8d945256f8f64dca3f6dd222bbb8"
+ALT_COOK = "Pilha de cookies recheados cortados ao meio, com recheio de chocolate, red velvet com creme branco e cookie de chocolate"
+T5OPTS["s"] = ("Quanto você precisa vender em dezembro pra tirar R$ 3.000 de salário?", "O Receitech calcula.")
+
+
+def p1_meta6():
+    a, b = T5OPTS["s"]
+    inner = f'''<div style="position: absolute; left: 44px; top: 40px; {POP}; font-size: 12px; font-weight: 600; letter-spacing: 3px; color: {BLUE}">NOVO NO RECEITECH · META DE VENDAS</div>
+<div style="position: absolute; left: 44px; right: 40px; top: 64px; display: flex; flex-direction: column; gap: 14px">
+<div style="{POP}; color: {NAVY}; font-size: 35px; font-weight: 800; line-height: 1.05; letter-spacing: -1.4px">{a}<br><span style="color: {BLUE}">{b}</span></div>
+<div style="{POP}; color: {NAVY}; font-size: 14px; font-weight: 500; line-height: 1.4">{SUB5}</div></div>
+<img src="{U("COOK")}" alt="{ALT_COOK}" style="position: absolute; left: 40px; top: 372px; width: 222px; height: 290px; object-fit: cover; object-position: 48% 50%; border-radius: 18px">
+<div style="position: absolute; left: 278px; top: 292px">{phone(meta_screen(), 418)}</div>'''
+    return box("#F2F2F0", inner)
+
+
+if __name__ == "__main__" and os.environ.get("V6"):
+    html = p1_meta6().replace("o seu salário de dezembro.", "o seu salário de R$ 3.000.")
+    code, title = "D25_P1_M4", "25/11 · P1 · 4.4 (salário de R$ 3.000, cookies)"
+    if MODE == "canvas":
+        doc = page_f(title, html, PW, PH)
+        assert "file://" not in doc and "PENDENTE" not in doc
+        open(os.path.join(OUT, code + ".dc.html"), "w").write(doc)
+    else:
+        open(os.path.join(OUT, code + ".html"), "w").write(
+            f"<html><head><meta charset='utf-8'><link href='{FONTS}' rel='stylesheet'><style>body{{margin:0}}</style></head><body>{html}</body></html>")
