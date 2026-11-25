@@ -53,7 +53,7 @@ SLIDES25 = [
 ]
 
 if __name__ == "__main__":
-    for code, title, fn in ([] if os.environ.get('V3') else SLIDES25B if os.environ.get('V2') else SLIDES25):
+    for code, title, fn in ([] if (os.environ.get('V3') or os.environ.get('V4')) else SLIDES25B if os.environ.get('V2') else SLIDES25):
         html = fn()
         if MODE == "canvas":
             doc = page_f(title, html, PW, PH)
@@ -103,8 +103,48 @@ SLIDES25C = [
     ("D25_P1_R3", "25/11 · P1 · 2.3 (T4)", lambda: p1_t4("l")),
     ("D25_P1_R4", "25/11 · P1 · 2.4 (layout T2, frase 2.2)", lambda: p1_t2("k")),
 ]
-if __name__ == "__main__" and os.environ.get("V3"):
+if __name__ == "__main__" and os.environ.get("V3") and not os.environ.get("V4"):
     for code, title, fn in SLIDES25C:
+        html = fn()
+        if MODE == "canvas":
+            doc = page_f(title, html, PW, PH)
+            assert "file://" not in doc and "PENDENTE" not in doc
+            open(os.path.join(OUT, code + ".dc.html"), "w").write(doc)
+        else:
+            open(os.path.join(OUT, code + ".html"), "w").write(
+                f"<html><head><meta charset='utf-8'><link href='{FONTS}' rel='stylesheet'><style>body{{margin:0}}</style></head><body>{html}</body></html>")
+
+
+# ================= Rodada 4 (Luana 25/11: funcionalidade mais gritante; foto do pudim horrível) =================
+IMGS["PUD3"] = "doce_pudim_3.jpg"
+BLOBS["PUD3"] = "/_blob/62ad94c4649c463ae6c60e4466a1c5bf"
+ALT_PUD3 = "Pudim de leite inteiro com calda de caramelo num prato branco"
+IMGS["PUDIM"], BLOBS["PUDIM"] = IMGS["PUD3"], BLOBS["PUD3"]
+T4OPTS = {
+    "m": ("Repasse a taxa do cartão", "pro cliente.", "Um toque na venda e o total do cliente já sai com a taxa somada. Você recebe o valor inteiro."),
+    "n": ("Taxa do cartão?", "Quem paga é o cliente.", "Você liga “Repassar taxa” na venda e o total já sai com a taxa somada."),
+    "o": ("O Receitech soma a taxa do cartão", "no total do cliente.", "Você liga “Repassar taxa” na venda e recebe o valor inteiro do pudim."),
+}
+
+
+def p1_r4(k):
+    a, b, sub = T4OPTS[k]
+    inner = f'''<div style="position: absolute; left: 44px; top: 40px; {POP}; font-size: 12px; font-weight: 600; letter-spacing: 3px; color: {BLUE}">NO RECEITECH</div>
+<div style="position: absolute; left: 44px; right: 40px; top: 64px; display: flex; flex-direction: column; gap: 14px">
+<div style="{POP}; color: {NAVY}; font-size: {44 if k == "m" else 38}px; font-weight: 800; line-height: 1.04; letter-spacing: -1.8px">{a} <span style="color: {BLUE}">{b}</span></div>
+<div style="{POP}; color: {NAVY}; font-size: 15px; font-weight: 500; line-height: 1.4">{sub}</div></div>
+<img src="{U("PUD3")}" alt="{ALT_PUD3}" style="position: absolute; left: 44px; top: 300px; width: 250px; height: 300px; object-fit: cover; object-position: 72% 50%; border-radius: 18px">
+<div style="position: absolute; left: 310px; top: 262px">{phone(pagamento_screen(), 420)}</div>'''
+    return box("#F2F2F0", inner)
+
+
+SLIDES25D = [
+    ("D25_P1_S1", "25/11 · P1 · 3.1", lambda: p1_r4("m")),
+    ("D25_P1_S2", "25/11 · P1 · 3.2", lambda: p1_r4("n")),
+    ("D25_P1_S3", "25/11 · P1 · 3.3", lambda: p1_r4("o")),
+]
+if __name__ == "__main__" and os.environ.get("V4"):
+    for code, title, fn in SLIDES25D:
         html = fn()
         if MODE == "canvas":
             doc = page_f(title, html, PW, PH)

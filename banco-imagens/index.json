@@ -518,6 +518,30 @@
     1140,
     760
    ],
+   "usos": [],
+   "obs": "Luana (25/11): fundo de madeira escura péssimo; não usar"
+  },
+  {
+   "arquivo": "banco-imagens/doce_pudim_2.jpg",
+   "categoria": "doce",
+   "produto": "pudim de leite com furinhos, fatia sendo servida (fundo branco)",
+   "fonte": "receitamaneira.com.br (Google Imagens, 25/11; sem marca visível)",
+   "tamanho": [
+    1280,
+    720
+   ],
+   "usos": [],
+   "obs": "Luana (25/11) achou horrível recortada na fatia; não usar"
+  },
+  {
+   "arquivo": "banco-imagens/doce_pudim_3.jpg",
+   "categoria": "doce",
+   "produto": "pudim de leite inteiro com calda num prato branco (mesa de madeira clara)",
+   "fonte": "comocozinhar.com.br (Google Imagens, 25/11; sem marca visível)",
+   "tamanho": [
+    1280,
+    853
+   ],
    "usos": []
   }
  ]
