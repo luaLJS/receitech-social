@@ -602,7 +602,12 @@
     1100,
     1100
    ],
-   "usos": []
+   "usos": [
+    {
+     "data": "2026-11-25",
+     "post": "P2 precificação por foto (tela 1)"
+    }
+   ]
   }
  ]
 }
