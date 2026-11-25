@@ -53,7 +53,7 @@ SLIDES25 = [
 ]
 
 if __name__ == "__main__":
-    for code, title, fn in ([] if (os.environ.get("V3") or os.environ.get("V4") or os.environ.get("V5") or os.environ.get("V6") or os.environ.get("V7")) else SLIDES25B if os.environ.get('V2') else SLIDES25):
+    for code, title, fn in ([] if (os.environ.get("P2V") or os.environ.get("V3") or os.environ.get("V4") or os.environ.get("V5") or os.environ.get("V6") or os.environ.get("V7")) else SLIDES25B if os.environ.get('V2') else SLIDES25):
         html = fn()
         if MODE == "canvas":
             doc = page_f(title, html, PW, PH)
@@ -295,3 +295,97 @@ if __name__ == "__main__" and os.environ.get("V7"):
     else:
         open(os.path.join(OUT, code + ".html"), "w").write(
             f"<html><head><meta charset='utf-8'><link href='{FONTS}' rel='stylesheet'><style>body{{margin:0}}</style></head><body>{html}</body></html>")
+
+
+# ================= Post 2 · Precificação por foto (carrossel, 18h) =================
+IMGS["BOMB"] = "doce_bombompote_1.jpg"
+BLOBS["BOMB"] = "/_blob/c0b8527483ff500c0cc7a4c66fbacffa"
+ALT_BOMB = "Mão segurando potes de bombom de morango empilhados, com creme branco e morangos cortados"
+P2T = {
+    "a": "Tire foto da receita. O Receitech precifica.",
+    "b": "Seu caderno de receitas, precificado por foto.",
+    "c": "Da foto da receita ao preço do bombom.",
+}
+P2SUB = "Mande a foto (ou o PDF) da receita. O Receitech monta a receita com os seus ingredientes e chega no preço de venda."
+P2S2 = "Tirou a foto, a receita aparece pronta com os seus ingredientes. Você só confere."
+
+
+def p2_n3(k):
+    inner = f'''<img src="{U("BOMB")}" alt="{ALT_BOMB}" style="position: absolute; left: 0; top: 0; width: {PW}px; height: {PH}px; object-fit: cover; object-position: 50% 50%">
+<div style="position: absolute; inset: 0; background: rgba(16,24,40,0.52)"></div>
+<div style="position: absolute; left: 0; right: 0; top: 120px; text-align: center; {POP}; font-size: 14px; font-weight: 500; color: #FFFFFF">receitech</div>
+<div style="position: absolute; left: 34px; right: 34px; top: 0; bottom: 30px; display: flex; align-items: center; justify-content: center; text-align: center; {CND}; color: #CFE2FF; font-size: 74px; line-height: 0.98; letter-spacing: 0.5px; text-transform: uppercase">{P2T[k]}</div>
+<div style="position: absolute; left: 54px; right: 54px; bottom: 56px; text-align: center; {POP}; font-size: 15px; font-weight: 500; line-height: 1.4; color: #FFFFFF">{P2SUB}</div>'''
+    return box(NAVY, inner)
+
+
+def p2_n2(k):
+    inner = f'''<div style="position: absolute; left: 34px; top: 30px; {POP}; font-size: 12px; font-weight: 600; letter-spacing: 2px; color: {NAVY}">RECEITECH</div>
+<div style="position: absolute; left: 30px; right: 26px; top: 66px; {HVY}; font-weight: 900; color: {NAVY}; font-size: 70px; line-height: 0.92; letter-spacing: -3.5px; text-transform: lowercase">tire <span style="text-decoration: underline; text-decoration-thickness: 6px; text-underline-offset: 7px">foto</span> da receita. o Receitech precifica.</div>
+<img src="{U("BOMB")}" alt="{ALT_BOMB}" style="position: absolute; right: 34px; bottom: 40px; width: 230px; height: 260px; object-fit: cover; border-radius: 16px">
+<div style="position: absolute; left: 34px; width: 230px; bottom: 44px; {POP}; font-size: 15px; font-weight: 500; line-height: 1.4; color: {NAVY}">{P2SUB}</div>'''
+    return box(SKY, inner)
+
+
+def receita_foto_screen():
+    back = svg('<path d="M15 5l-7 7 7 7"></path>', 20, DARK, 2.4)
+    chev = svg('<path d="M9 5l7 7-7 7"></path>', 16, "#98A2B3", 2.2)
+    thumb = f'''<div style="width: 54px; height: 70px; border-radius: 8px; background: #FFFDF6; border: 1px solid {DIV}; box-shadow: 0 2px 6px rgba(16,24,40,0.12); padding: 7px 6px; box-sizing: border-box; display: flex; flex-direction: column; gap: 5px">
+<div style="height: 3px; width: 70%; background: #8A6D3B; border-radius: 2px"></div>{''.join('<div style="height: 2px; width: %d%%; background: #B9A57E; border-radius: 2px"></div>' % w for w in [92, 80, 88, 70, 85, 60, 78])}</div>'''
+
+    def ing(nome, qtd, novo=False, est=False):
+        tag = f'<span style="padding: 2px 8px; border-radius: 10px; background: {LBLUE}; color: {BLUE}; font-size: 11px; font-weight: 600">novo</span>' if novo else ""
+        bg = "background: #F9FAFB;" if est else ""
+        return f'''<div style="display: flex; align-items: center; gap: 10px; padding: 11px 6px; border-bottom: 1px solid {DIV}; {bg}">
+<div style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 600">{nome}</span><span style="font-size: 13px; color: {SEC}">{qtd}</span></div>{tag}{chev}</div>'''
+    rows = "".join([
+        ing("Leite condensado", "2 latas · 790 g"),
+        ing("Creme de leite", "1 caixinha · 200 g"),
+        ing("Leite integral", "2 xícaras · 480 ml"),
+        ing("Amido de milho", "2 colheres de sopa · 20 g", True),
+        ing("Morango", "2 caixas · 500 g", True),
+        ing("Chocolate meio amargo", "1 barra · 170 g"),
+        ing("Essência de baunilha", "≈ 5 ml · estimado", est=True),
+    ])
+    return f'''<div style="width: 390px; height: 844px; background: #FFFFFF; {POP}; color: {DARK}; overflow: hidden; position: relative">
+<div style="height: 54px"></div>
+<div style="height: 48px; display: grid; grid-template-columns: 48px 1fr 48px; align-items: center; padding: 0 6px">
+<div style="display: flex; justify-content: center">{back}</div><span style="text-align: center; font-size: 18px; font-weight: 700">Confere sua receita</span><span></span></div>
+<div style="padding: 8px 20px 0">
+<div style="display: flex; align-items: flex-start; gap: 12px">
+<div style="flex: 1; display: flex; flex-direction: column; gap: 10px">
+<div style="border: 1px solid #D0D5DD; border-radius: 12px; padding: 10px 12px; font-size: 18px; font-weight: 600">Bombom de morango no pote</div>
+<span style="align-self: flex-start; padding: 6px 12px; border-radius: 16px; border: 1px solid #D0D5DD; font-size: 13px; font-weight: 500">Doces no pote</span></div>
+{thumb}</div>
+<div style="margin-top: 14px">{rows}</div>
+<div style="padding: 14px 6px; font-size: 15px; font-weight: 600; color: {BLUE}">+ Adicionar ingrediente que faltou</div>
+</div>
+<div style="position: absolute; left: 20px; right: 20px; bottom: 34px; height: 52px; border-radius: 14px; background: {BLUE}; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 600">Está certo</div>
+<div style="position: absolute; left: 0; right: 0; bottom: 8px; display: flex; justify-content: center"><div style="width: 134px; height: 5px; border-radius: 3px; background: {DARK}"></div></div>
+</div>'''
+
+
+def p2_s2():
+    inner = f'''<div style="position: absolute; left: 44px; right: 44px; top: 46px; color: {NAVY}; font-size: 27px; font-weight: 600; line-height: 1.16; letter-spacing: -0.8px; text-wrap: balance">{P2S2}</div>
+<div style="position: absolute; left: 50%; top: 190px; transform: translateX(-50%)">{phone(receita_foto_screen(), 490)}</div>
+<img src="{U("LOGOB")}" alt="receitech" style="position: absolute; right: 44px; bottom: 26px; height: 20px; width: auto">'''
+    return box(CREAM, inner)
+
+
+SLIDES25P2 = [
+    ("D25_P2_T1a", "25/11 · P2 · tela 1 · 5.1 (N3)", lambda: p2_n3("a")),
+    ("D25_P2_T1b", "25/11 · P2 · tela 1 · 5.2 (N3)", lambda: p2_n3("b")),
+    ("D25_P2_T1c", "25/11 · P2 · tela 1 · 5.3 (N3)", lambda: p2_n3("c")),
+    ("D25_P2_T1n2", "25/11 · P2 · tela 1 · layout N2 (5.1)", lambda: p2_n2("a")),
+    ("D25_P2_S2", "25/11 · P2 · tela 2 (receita lida da foto)", p2_s2),
+]
+if __name__ == "__main__" and os.environ.get("P2V"):
+    for code, title, fn in SLIDES25P2:
+        html = fn()
+        if MODE == "canvas":
+            doc = page_f(title, html, PW, PH)
+            assert "file://" not in doc and "PENDENTE" not in doc
+            open(os.path.join(OUT, code + ".dc.html"), "w").write(doc)
+        else:
+            open(os.path.join(OUT, code + ".html"), "w").write(
+                f"<html><head><meta charset='utf-8'><link href='{FONTS}' rel='stylesheet'><style>body{{margin:0}}</style></head><body>{html}</body></html>")

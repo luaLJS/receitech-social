@@ -592,6 +592,17 @@
      "post": "P1 meta de vendas (foto principal)"
     }
    ]
+  },
+  {
+   "arquivo": "banco-imagens/doce_bombompote_1.jpg",
+   "categoria": "doce",
+   "produto": "potes de bombom de morango empilhados na mão (creme e morangos)",
+   "fonte": "receitasgourmetdavovo.com.br (Google Imagens, 25/11; sem marca visível)",
+   "tamanho": [
+    1100,
+    1100
+   ],
+   "usos": []
   }
  ]
 }
