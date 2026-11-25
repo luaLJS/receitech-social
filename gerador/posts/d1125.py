@@ -53,7 +53,7 @@ SLIDES25 = [
 ]
 
 if __name__ == "__main__":
-    for code, title, fn in ([] if (os.environ.get("V3") or os.environ.get("V4") or os.environ.get("V5") or os.environ.get("V6")) else SLIDES25B if os.environ.get('V2') else SLIDES25):
+    for code, title, fn in ([] if (os.environ.get("V3") or os.environ.get("V4") or os.environ.get("V5") or os.environ.get("V6") or os.environ.get("V7")) else SLIDES25B if os.environ.get('V2') else SLIDES25):
         html = fn()
         if MODE == "canvas":
             doc = page_f(title, html, PW, PH)
@@ -227,7 +227,7 @@ SLIDES25E = [
     ("D25_P1_M2", "25/11 · P1 · 4.2 (meta de vendas)", lambda: p1_meta("q")),
     ("D25_P1_M3", "25/11 · P1 · 4.3 (meta de vendas)", lambda: p1_meta("r")),
 ]
-if __name__ == "__main__" and os.environ.get("V5") and not os.environ.get("V6"):
+if __name__ == "__main__" and os.environ.get("V5") and not os.environ.get("V6") and not os.environ.get("V7"):
     for code, title, fn in SLIDES25E:
         html = fn()
         if MODE == "canvas":
@@ -257,9 +257,38 @@ def p1_meta6():
     return box("#F2F2F0", inner)
 
 
-if __name__ == "__main__" and os.environ.get("V6"):
+if __name__ == "__main__" and os.environ.get("V6") and not os.environ.get("V7"):
     html = p1_meta6().replace("o seu salário de dezembro.", "o seu salário de R$ 3.000.")
     code, title = "D25_P1_M4", "25/11 · P1 · 4.4 (salário de R$ 3.000, cookies)"
+    if MODE == "canvas":
+        doc = page_f(title, html, PW, PH)
+        assert "file://" not in doc and "PENDENTE" not in doc
+        open(os.path.join(OUT, code + ".dc.html"), "w").write(doc)
+    else:
+        open(os.path.join(OUT, code + ".html"), "w").write(
+            f"<html><head><meta charset='utf-8'><link href='{FONTS}' rel='stylesheet'><style>body{{margin:0}}</style></head><body>{html}</body></html>")
+
+
+# ================= Rodada 7 (Luana 25/11: "uma imagem melhor de cookies, de vender") =================
+IMGS["COOK2"] = "doce_cookie_2.jpg"
+BLOBS["COOK2"] = "/_blob/1439eb6df97d81ca855807288e875cd6"
+ALT_COOK2 = "Caixa de presente com seis cookies recheados vista de cima, escrito COOKIES feitos com amor"
+
+
+def p1_meta7():
+    a, b = T5OPTS["s"]
+    inner = f'''<div style="position: absolute; left: 44px; top: 40px; {POP}; font-size: 12px; font-weight: 600; letter-spacing: 3px; color: {BLUE}">NOVO NO RECEITECH · META DE VENDAS</div>
+<div style="position: absolute; left: 44px; right: 40px; top: 64px; display: flex; flex-direction: column; gap: 14px">
+<div style="{POP}; color: {NAVY}; font-size: 35px; font-weight: 800; line-height: 1.05; letter-spacing: -1.4px">{a}<br><span style="color: {BLUE}">{b}</span></div>
+<div style="{POP}; color: {NAVY}; font-size: 14px; font-weight: 500; line-height: 1.4">{SUB5}</div></div>
+<img src="{U("COOK2")}" alt="{ALT_COOK2}" style="position: absolute; left: 32px; top: 424px; width: 280px; height: 174px; object-fit: cover; border-radius: 14px">
+<div style="position: absolute; left: 318px; top: 304px">{phone(meta_screen(), 400)}</div>'''
+    return box("#F2F2F0", inner)
+
+
+if __name__ == "__main__" and os.environ.get("V7"):
+    html = p1_meta7().replace("o seu salário de dezembro.", "o seu salário de R$ 3.000.")
+    code, title = "D25_P1_M5", "25/11 · P1 · 4.5 (caixa de cookies)"
     if MODE == "canvas":
         doc = page_f(title, html, PW, PH)
         assert "file://" not in doc and "PENDENTE" not in doc
