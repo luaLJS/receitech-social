@@ -18,6 +18,34 @@ P2_T1.update({
 })
 TOPS.update({"g": 222, "h": 222, "i": 222})
 
+IMGS["PUD2"] = "doce_pudim_2.jpg"
+BLOBS["PUD2"] = "/_blob/b4d6858d13932caf186dfef02fe3fbb8"
+# miniatura do app também usa a foto nova
+IMGS["PUDIM"], BLOBS["PUDIM"] = IMGS["PUD2"], BLOBS["PUD2"]
+ALT_PUD2 = "Pudim de leite com calda de caramelo num prato branco, com uma fatia sendo servida"
+
+
+# Luana (25/11): "tá péssimo esse fundo do pudim" -> foto nova, fundo branco (doce_pudim_2)
+def p1_v2(k, side="R"):
+    t1, t2, sub = P2_T1[k]
+    txt = t1.upper() + "<br>" + t2.upper()
+    top = TOPS[k]
+    pos = "8% 50%" if side == "R" else "100% 50%"
+    ph = f'right: 26px' if side == "R" else 'left: 26px'
+    inner = f"""<img src="{U("PUD2")}" alt="{ALT_PUD2}" style="position: absolute; left: 0; top: {top}px; width: {PW}px; height: {PH - top}px; object-fit: cover; object-position: {pos}">
+<div style="position: absolute; left: 40px; right: 40px; top: 40px; display: flex; flex-direction: column; gap: 14px">
+<div style="{POP}; font-weight: 600; color: #FFF4D2; font-size: 31px; line-height: 1.1; letter-spacing: 0.3px">{txt}</div>
+<div style="{POP}; font-weight: 500; color: #FFFFFF; font-size: 15px; line-height: 1.4; max-width: 440px">{sub}</div></div>
+<div style="position: absolute; {ph}; top: {top + 34}px">{phone(pagamento_screen(), 560)}</div>"""
+    return box(NAVY, inner)
+
+
+SLIDES25B = [
+    ("D25_P1_F1", "25/11 · P1 · foto única · 1.1 (pudim novo)", lambda: p1_v2("g", "L")),
+    ("D25_P1_F2", "25/11 · P1 · foto única · 1.2 (pudim novo)", lambda: p1_v2("h", "L")),
+    ("D25_P1_F3", "25/11 · P1 · foto única · 1.3 (pudim novo)", lambda: p1_v2("i", "L")),
+]
+
 SLIDES25 = [
     ("D25_P1_F1", "25/11 · P1 · foto única · 1.1", lambda: p2_single("g")),
     ("D25_P1_F2", "25/11 · P1 · foto única · 1.2", lambda: p2_single("h")),
@@ -25,7 +53,7 @@ SLIDES25 = [
 ]
 
 if __name__ == "__main__":
-    for code, title, fn in SLIDES25:
+    for code, title, fn in (SLIDES25B if os.environ.get('V2') else SLIDES25):
         html = fn()
         if MODE == "canvas":
             doc = page_f(title, html, PW, PH)
