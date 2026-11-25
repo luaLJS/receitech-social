@@ -286,7 +286,12 @@
     1280,
     720
    ],
-   "usos": []
+   "usos": [
+    {
+     "data": "2026-11-25",
+     "post": "P1 meta de vendas (miniatura no app)"
+    }
+   ]
   },
   {
    "arquivo": "banco-imagens/salg_minipizza_1.jpg",
@@ -432,7 +437,12 @@
     1100,
     1100
    ],
-   "usos": []
+   "usos": [
+    {
+     "data": "2026-11-25",
+     "post": "P1 meta de vendas (miniatura no app)"
+    }
+   ]
   },
   {
    "arquivo": "banco-imagens/doce_bolocenoura_1.jpg",
@@ -491,7 +501,12 @@
     1024,
     1280
    ],
-   "usos": []
+   "usos": [
+    {
+     "data": "2026-11-25",
+     "post": "P1 meta de vendas (miniatura no app)"
+    }
+   ]
   },
   {
    "arquivo": "banco-imagens/doce_redvelvet_1.jpg",
@@ -542,7 +557,12 @@
     1280,
     853
    ],
-   "usos": [],
+   "usos": [
+    {
+     "data": "2026-11-25",
+     "post": "P1 meta de vendas (miniatura no app)"
+    }
+   ],
    "obs": "Luana (25/11): pudim não está bom pra post de venda; evitar como foto principal"
   },
   {
@@ -566,7 +586,12 @@
     986,
     612
    ],
-   "usos": []
+   "usos": [
+    {
+     "data": "2026-11-25",
+     "post": "P1 meta de vendas (foto principal)"
+    }
+   ]
   }
  ]
 }
