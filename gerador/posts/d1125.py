@@ -53,7 +53,7 @@ SLIDES25 = [
 ]
 
 if __name__ == "__main__":
-    for code, title, fn in (SLIDES25B if os.environ.get('V2') else SLIDES25):
+    for code, title, fn in ([] if os.environ.get('V3') else SLIDES25B if os.environ.get('V2') else SLIDES25):
         html = fn()
         if MODE == "canvas":
             doc = page_f(title, html, PW, PH)
@@ -63,3 +63,53 @@ if __name__ == "__main__":
             open(os.path.join(OUT, code + ".html"), "w").write(
                 f"<html><head><meta charset='utf-8'><link href='{FONTS}' rel='stylesheet'><style>body{{margin:0}}</style></head><body>{html}</body></html>")
     print("ok", MODE, OUT)
+
+
+# ================= Rodada 3 (Luana 25/11: "péssimo essas sugestões, troca de ideia de texto e layout") =================
+T3OPTS = {
+    "j": ("Crédito ou Pix? Pro seu lucro,", "tanto faz."),
+    "k": ("A maquininha come", "5% do pudim."),
+    "l": ("O cliente escolheu o crédito.", "A taxa vai junto."),
+}
+SUB3 = "No Receitech, você liga “Repassar taxa” na venda e a taxa entra no total do cliente."
+
+
+SER = "font-family: 'Libre Caslon Text', Georgia, serif"
+CREAM = "#F3EDE3"
+
+
+def p1_t4(k):
+    a, b = T3OPTS[k]
+    inner = f'''<div style="position: absolute; left: 44px; right: 40px; top: 44px; {POP}; color: {NAVY}; font-size: 46px; font-weight: 800; line-height: 1.04; letter-spacing: -2px">{a} <span style="color: {BLUE}">{b}</span></div>
+<img src="{U("PUD2")}" alt="{ALT_PUD2}" style="position: absolute; left: 44px; top: 262px; width: 236px; height: 340px; object-fit: cover; object-position: 80% 50%; border-radius: 18px">
+<div style="position: absolute; left: 300px; top: 236px">{phone(pagamento_screen(), 396)}</div>
+<div style="position: absolute; left: 44px; right: 44px; bottom: 40px; {POP}; color: {NAVY}; font-size: 14px; font-weight: 500; line-height: 1.4">{SUB3}</div>'''
+    return box("#F2F2F0", inner)
+
+
+def p1_t2(k):
+    a, b = T3OPTS[k]
+    inner = f'''<div style="position: absolute; left: 0; right: 0; top: 40px; text-align: center; {POP}; font-size: 11px; font-weight: 600; letter-spacing: 4px; color: {BLUE}">RECEITECH</div>
+<div style="position: absolute; left: 50px; right: 50px; top: 70px; text-align: center; {SER}; color: {NAVY}; font-size: 40px; line-height: 1.15; letter-spacing: -0.8px; text-wrap: balance">{a} <i>{b}</i></div>
+<img src="{U("PUD2")}" alt="{ALT_PUD2}" style="position: absolute; left: 40px; top: 290px; width: 250px; height: 290px; object-fit: cover; object-position: 88% 50%; border-radius: 14px">
+<div style="position: absolute; left: 306px; top: 236px">{phone(pagamento_screen(), 396)}</div>
+<div style="position: absolute; left: 50px; right: 50px; bottom: 38px; text-align: center; {POP}; color: {NAVY}; font-size: 14px; font-weight: 500; line-height: 1.4">{SUB3}</div>'''
+    return box(CREAM, inner)
+
+
+SLIDES25C = [
+    ("D25_P1_R1", "25/11 · P1 · 2.1 (T4)", lambda: p1_t4("j")),
+    ("D25_P1_R2", "25/11 · P1 · 2.2 (T4)", lambda: p1_t4("k")),
+    ("D25_P1_R3", "25/11 · P1 · 2.3 (T4)", lambda: p1_t4("l")),
+    ("D25_P1_R4", "25/11 · P1 · 2.4 (layout T2, frase 2.2)", lambda: p1_t2("k")),
+]
+if __name__ == "__main__" and os.environ.get("V3"):
+    for code, title, fn in SLIDES25C:
+        html = fn()
+        if MODE == "canvas":
+            doc = page_f(title, html, PW, PH)
+            assert "file://" not in doc and "PENDENTE" not in doc
+            open(os.path.join(OUT, code + ".dc.html"), "w").write(doc)
+        else:
+            open(os.path.join(OUT, code + ".html"), "w").write(
+                f"<html><head><meta charset='utf-8'><link href='{FONTS}' rel='stylesheet'><style>body{{margin:0}}</style></head><body>{html}</body></html>")
