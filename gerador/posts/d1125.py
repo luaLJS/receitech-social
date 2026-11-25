@@ -53,7 +53,7 @@ SLIDES25 = [
 ]
 
 if __name__ == "__main__":
-    for code, title, fn in ([] if (os.environ.get('V3') or os.environ.get('V4')) else SLIDES25B if os.environ.get('V2') else SLIDES25):
+    for code, title, fn in ([] if (os.environ.get("V3") or os.environ.get("V4") or os.environ.get("V5")) else SLIDES25B if os.environ.get('V2') else SLIDES25):
         html = fn()
         if MODE == "canvas":
             doc = page_f(title, html, PW, PH)
@@ -143,8 +143,92 @@ SLIDES25D = [
     ("D25_P1_S2", "25/11 · P1 · 3.2", lambda: p1_r4("n")),
     ("D25_P1_S3", "25/11 · P1 · 3.3", lambda: p1_r4("o")),
 ]
-if __name__ == "__main__" and os.environ.get("V4"):
+if __name__ == "__main__" and os.environ.get("V4") and not os.environ.get("V5"):
     for code, title, fn in SLIDES25D:
+        html = fn()
+        if MODE == "canvas":
+            doc = page_f(title, html, PW, PH)
+            assert "file://" not in doc and "PENDENTE" not in doc
+            open(os.path.join(OUT, code + ".dc.html"), "w").write(doc)
+        else:
+            open(os.path.join(OUT, code + ".html"), "w").write(
+                f"<html><head><meta charset='utf-8'><link href='{FONTS}' rel='stylesheet'><style>body{{margin:0}}</style></head><body>{html}</body></html>")
+
+
+# ================= Rodada 5 (Luana 25/11: funcionalidade fraca; escolheu Meta de vendas do mês pro P1) =================
+for _k, _f in [("BOLOM", "doce_bolomorango_1.jpg"), ("BISC", "natal_biscoito_1.jpg"), ("KIBE", "salg_kibe_2.jpg")]:
+    IMGS[_k] = _f
+    BLOBS[_k] = {"BOLOM": "/_blob/75e04a74a2d4ad1e084cd1495d369fdf", "BISC": "/_blob/928737f0edc80ff85bd16c0097a78621", "KIBE": "/_blob/ae0850cfb05afeef070a3916d679f039"}[_k]
+GREEN = "#039855"
+
+# plano: 15 x 160 + 30 x 90 + 60 x 35 + 12 x 150 = 2.400 + 2.700 + 2.100 + 1.800 = 9.000
+# vendido: 9 x 160 + 14 x 90 + 32 x 35 + 6 x 150 = 1.440 + 1.260 + 1.120 + 900 = 4.720; falta 4.280
+PLANO = [("BOLOM", "Bolos de festa", 9, 15, 160), ("PUD3", "Pudins", 14, 30, 90), ("BISC", "Biscoitos de Natal", 32, 60, 35), ("KIBE", "Quibes (cento)", 6, 12, 150)]
+assert sum(q * p for _, _, _, q, p in PLANO) == 9000 and sum(v * p for _, _, v, _, p in PLANO) == 4720
+
+
+def meta_screen():
+    chevl = svg('<path d="M15 5l-7 7 7 7"></path>', 18, DARK, 2.4)
+    chevr = svg('<path d="M9 5l7 7-7 7"></path>', 18, DARK, 2.4)
+    inbox = svg('<path d="M22 12h-6l-2 3h-4l-2-3H2"></path><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path>', 22, DARK, 1.8)
+    plus = svg('<path d="M12 5v14M5 12h14"></path>', 18, BLUE, 2.4)
+
+    def line(k, name, v, q, p):
+        pct = min(100, round(100 * v / q))
+        return f'''<div style="display: flex; align-items: center; gap: 12px; padding: 10px 0">
+<img src="{U(k)}" alt="{name}" style="width: 44px; height: 44px; border-radius: 10px; object-fit: cover; flex: none">
+<div style="flex: 1; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 15px; font-weight: 600">{name}</span>
+<div style="height: 6px; border-radius: 3px; background: #F2F4F7"><div style="width: {pct}%; height: 6px; border-radius: 3px; background: {BLUE}"></div></div></div>
+<div style="width: 74px; text-align: right"><span style="font-size: 24px; font-weight: 700">{v}</span> <span style="font-size: 13px; color: {SEC}">de {q}</span></div>
+<span style="width: 38px; height: 38px; border-radius: 12px; border: 1px solid {BLUE}; box-shadow: 0 3px 0 #1F6AD8; display: flex; align-items: center; justify-content: center; flex: none">{plus}</span></div>'''
+    rows = "".join(line(*x) for x in PLANO)
+    items = "".join(f'<span style="font-size: 11px; font-weight: {700 if n == "Vendas" else 500}; color: {BLUE if n == "Vendas" else "#98A2B3"}">{n}</span>' for n in ["Vendas", "Rotina", "Finanças", "Produtos", "Perfil"])
+    return f'''<div style="width: 390px; height: 844px; background: #FFFFFF; {POP}; color: {DARK}; overflow: hidden; position: relative">
+<div style="height: 54px"></div>
+<div style="padding: 4px 20px 0; display: flex; align-items: center; justify-content: space-between">
+<div style="display: flex; gap: 22px; font-size: 17px"><span style="font-weight: 700; border-bottom: 2px solid {DARK}; padding-bottom: 6px">Meta</span><span style="color: #98A2B3; font-weight: 500">Vendas</span></div>{inbox}</div>
+<div style="padding: 22px 20px 0">
+<div style="display: flex; align-items: center; justify-content: center; gap: 14px; font-size: 15px; font-weight: 600">{chevl}<span>Dezembro</span>{chevr}</div>
+<div style="margin-top: 18px; font-size: 15px; color: {SEC}">Pra bater dezembro falta vender</div>
+<div style="margin-top: 2px; display: flex; align-items: baseline; justify-content: space-between"><span style="font-size: 38px; font-weight: 700; letter-spacing: -1px">R$ 4.280</span><span style="font-size: 15px; font-weight: 600; color: {GREEN}">+ R$ 160 hoje</span></div>
+<div style="margin-top: 12px; height: 14px; border-radius: 7px; background: #F2F4F7"><div style="width: 52.4%; height: 14px; border-radius: 7px; background: {BLUE}"></div></div>
+<div style="margin-top: 8px; font-size: 13px; color: {SEC}">R$ 4.720 vendidos de R$ 9.000</div>
+<div style="margin-top: 14px; padding: 12px 14px; border-radius: 12px; background: {LBLUE}; font-size: 13px; line-height: 1.4">A meta de R$ 9.000 paga as contas do negócio e o seu salário de dezembro.</div>
+<div style="margin-top: 26px; display: flex; justify-content: space-between; align-items: baseline"><span style="font-size: 18px; font-weight: 700">Plano de vendas</span><span style="font-size: 14px; font-weight: 600; color: {BLUE}">Ajustar plano ›</span></div>
+<div style="margin-top: 6px">{rows}</div>
+</div>
+<div style="position: absolute; left: 0; right: 0; bottom: 0; height: 74px; background: #FFFFFF; border-top: 1px solid {DIV}; display: flex; justify-content: space-around; padding-top: 14px; box-sizing: border-box">{items}</div>
+<div style="position: absolute; left: 0; right: 0; bottom: 8px; display: flex; justify-content: center"><div style="width: 134px; height: 5px; border-radius: 3px; background: {DARK}"></div></div>
+</div>'''
+
+
+T5OPTS = {
+    "p": ("O Receitech te diz quanto vender pra pagar as contas e", "o seu salário."),
+    "q": ("Quanto você precisa vender em dezembro?", "O Receitech calcula."),
+    "r": ("Sua meta de vendas do mês,", "calculada pelo Receitech."),
+}
+SUB5 = "A meta sai das contas do negócio + o seu salário. A cada venda, você vê quanto falta e quantos de cada produto vender."
+
+
+def p1_meta(k, photo=True):
+    a, b = T5OPTS[k]
+    ph = f'<img src="{U("PUD3")}" alt="{ALT_PUD3}" style="position: absolute; left: 40px; top: 372px; width: 222px; height: 290px; object-fit: cover; object-position: 72% 50%; border-radius: 18px">' if photo else ""
+    inner = f'''<div style="position: absolute; left: 44px; top: 40px; {POP}; font-size: 12px; font-weight: 600; letter-spacing: 3px; color: {BLUE}">NOVO NO RECEITECH · META DE VENDAS</div>
+<div style="position: absolute; left: 44px; right: 40px; top: 64px; display: flex; flex-direction: column; gap: 14px">
+<div style="{POP}; color: {NAVY}; font-size: {34 if k == "p" else 40}px; font-weight: 800; line-height: 1.04; letter-spacing: -1.6px">{a} <span style="color: {BLUE}">{b}</span></div>
+<div style="{POP}; color: {NAVY}; font-size: 14px; font-weight: 500; line-height: 1.4">{SUB5}</div></div>
+{ph}
+<div style="position: absolute; left: 278px; top: 292px">{phone(meta_screen(), 418)}</div>'''
+    return box("#F2F2F0", inner)
+
+
+SLIDES25E = [
+    ("D25_P1_M1", "25/11 · P1 · 4.1 (meta de vendas)", lambda: p1_meta("p")),
+    ("D25_P1_M2", "25/11 · P1 · 4.2 (meta de vendas)", lambda: p1_meta("q")),
+    ("D25_P1_M3", "25/11 · P1 · 4.3 (meta de vendas)", lambda: p1_meta("r")),
+]
+if __name__ == "__main__" and os.environ.get("V5"):
+    for code, title, fn in SLIDES25E:
         html = fn()
         if MODE == "canvas":
             doc = page_f(title, html, PW, PH)
