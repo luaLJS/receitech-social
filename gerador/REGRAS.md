@@ -8,6 +8,7 @@ Regras definidas pela Luana. Seguir à risca. Em caso de dúvida, perguntar a el
 - Não usar travessão (—) nos textos.
 - "Precificação" pode ser usada nos posts (Luana, 23/11: todo mundo conhece a palavra).
 - Executar (publicar, agendar, enviar) só depois de um "OK" explícito dela.
+- Quando ela aprova o post (escolhe a opção e diz que gostou, "tá ótimo", "gostei dessa"), isso já é o OK pra exportar e agendar: não perguntar de novo "posso agendar?" (Luana, 25/11).
 - Mostrar as imagens no canvas do Claude Design e também no chat.
 - Mandar um post de cada vez já com a imagem desenhada (uma tela 1 por opção de texto, lado a lado com a tela 2) e as opções de texto na mesma mensagem: "fica mais fácil de ler e decidir" (Luana, 19/11).
 
