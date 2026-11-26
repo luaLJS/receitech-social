@@ -131,3 +131,106 @@ if __name__ == "__main__":
     if os.environ.get("P1V"):
         emit(SLIDES26P1)
     print("ok", MODE, OUT)
+
+
+# ================= Post 2 · Resumo: saúde financeira do negócio (carrossel, 18h) =================
+IMGS["ESF"] = "salg_esfiha_1.jpg"
+BLOBS["ESF"] = os.environ.get("BLOB_ESF", "/_blob/PENDENTE")
+ALT_ESF = "Três esfihas abertas de carne sobre uma tábua de madeira"
+SERIF = "font-family: 'Instrument Serif', Georgia, serif"
+# novembro: ganhos do negócio 4.220 = contas 400 + salário 3.000 + lucro final 820
+assert 400 + 3000 + 820 == 4220
+
+
+def gauge():
+    # arco de 90° (raio 184), três faixas, ponteiro curto apontando pra dentro na faixa verde
+    import math
+    R, cx, cy = 184, 130, 196
+    def pt(a, r=R):
+        return cx + r * math.cos(math.radians(a)), cy - r * math.sin(math.radians(a))
+    def arc(a0, a1, col):
+        x0, y0 = pt(a0); x1, y1 = pt(a1)
+        return f'<path d="M{x0:.1f} {y0:.1f} A{R} {R} 0 0 1 {x1:.1f} {y1:.1f}" fill="none" stroke="{col}" stroke-width="16" stroke-linecap="butt"></path>'
+    a = 61  # posição do ponteiro (135° = esquerda, 45° = direita)
+    p0 = pt(a, R + 12); p1 = pt(a, R - 22)
+    return f'''<svg width="320" height="86" viewBox="0 0 260 70" aria-hidden="true">
+<g transform="translate(0,-2)">{arc(135, 106, "#F97066")}{arc(105, 76, "#FDB022")}{arc(75, 45, "#32D583")}
+<path d="M{p0[0]:.1f} {p0[1]:.1f} L{p1[0]:.1f} {p1[1]:.1f}" stroke="{DARK}" stroke-width="5" stroke-linecap="round"></path></g></svg>'''
+
+
+def resumo_screen():
+    chevl = svg('<path d="M15 5l-7 7 7 7"></path>', 18, DARK, 2.4)
+    chevr = svg('<path d="M9 5l7 7-7 7"></path>', 18, DARK, 2.4)
+    chev = svg('<path d="M9 5l7 7-7 7"></path>', 16, "#98A2B3", 2.2)
+    check = svg('<path d="M5 12l5 5 9-10"></path>', 14, GREEN, 3)
+
+    def sq(title, line, val=None):
+        v = f'<div style="margin-top: 6px; font-size: 18px; font-weight: 700">{val}</div>' if val else f'<div style="margin-top: 8px; display: flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; color: {GREEN}">{check}{line}</div>'
+        return f'<div style="padding: 12px 10px; border-radius: 12px; border: 1px solid {DIV}"><div style="font-size: 12px; line-height: 1.3; color: {SEC}">{title}</div>{v}</div>'
+    items = "".join(f'<span style="font-size: 11px; font-weight: {700 if n == "Finanças" else 500}; color: {BLUE if n == "Finanças" else "#98A2B3"}">{n}</span>' for n in ["Vendas", "Rotina", "Finanças", "Produtos", "Perfil"])
+    return f'''<div style="width: 390px; height: 844px; background: #FFFFFF; {POP}; color: {DARK}; overflow: hidden; position: relative">
+<div style="height: 54px"></div>
+<div style="padding: 4px 20px 0; display: flex; gap: 22px; font-size: 17px"><span style="font-weight: 700; border-bottom: 2px solid {DARK}; padding-bottom: 6px">Resumo</span><span style="color: #98A2B3; font-weight: 500">Lucro</span><span style="color: #98A2B3; font-weight: 500">Caixa</span></div>
+<div style="padding: 18px 20px 0">
+<div style="display: flex; align-items: center; justify-content: center; gap: 14px; font-size: 15px; font-weight: 600">{chevl}<span>Novembro</span>{chevr}</div>
+<div style="margin-top: 26px; font-size: 18px; font-weight: 700">Saúde financeira do seu negócio</div>
+<div style="margin-top: 30px; display: flex; flex-direction: column; align-items: center">{gauge()}
+<div style="margin-top: 8px; font-size: 13px; color: {SEC}">Ganhos do negócio</div>
+<div style="font-size: 36px; font-weight: 700; letter-spacing: -0.8px">R$ 4.220</div>
+<span style="margin-top: 6px; padding: 4px 12px; border-radius: 14px; background: #ECFDF3; color: {GREEN}; font-size: 13px; font-weight: 600">Saudável</span>
+<div style="margin-top: 10px; text-align: center; font-size: 14px; line-height: 1.4; color: {SEC}; padding: 0 10px">As vendas de novembro pagaram as contas e o seu salário, e ainda sobrou lucro.</div></div>
+<div style="margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px">
+{sq("Contas do negócio", "Pagas pelas vendas")}{sq("Seu salário", "Pago pelas vendas")}{sq("Lucro final", "", "R$ 820")}</div>
+<div style="margin-top: 22px; display: flex; align-items: center; justify-content: space-between; padding: 14px 12px; border-radius: 12px; background: #F9FAFB; font-size: 14px; font-weight: 500"><span>Do lucro ao dinheiro na conta</span>{chev}</div>
+</div>
+<div style="position: absolute; left: 0; right: 0; bottom: 0; height: 74px; background: #FFFFFF; border-top: 1px solid {DIV}; display: flex; justify-content: space-around; padding-top: 14px; box-sizing: border-box">{items}</div>
+<div style="position: absolute; left: 0; right: 0; bottom: 8px; display: flex; justify-content: center"><div style="width: 134px; height: 5px; border-radius: 3px; background: {DARK}"></div></div>
+</div>'''
+
+
+P2T = {
+    "d": ("Seu negócio está saudável?", "O Receitech responde todo mês."),
+    "e": ("Contas pagas, salário pago e lucro?", "O Receitech mostra se o seu mês fechou assim."),
+    "f": ("A saúde financeira do seu negócio", "num ponteiro só, no Receitech."),
+}
+P2SUB = "No Resumo do Receitech, você vê se as vendas do mês pagaram as contas, o seu salário e ainda deram lucro."
+P2S2 = "As vendas pagaram as contas e o seu salário. E ainda sobraram R$ 820 de lucro."
+
+
+def p2_t9(k):
+    """T9 (ref. according to my calculations): pergunta grande em serifa itálica + resposta + objeto embaixo; azul."""
+    a, b = P2T[k]
+    inner = f'''<div style="position: absolute; left: 40px; right: 40px; top: 58px; text-align: center; color: #FFFFFF">
+<div style="{SERIF}; font-style: italic; font-size: 56px; line-height: 1.0; letter-spacing: -0.6px; text-wrap: balance">{a}</div>
+<div style="margin-top: 16px; {POP}; font-size: 21px; font-weight: 600; letter-spacing: -0.3px; text-wrap: balance">{b}</div>
+<div style="margin-top: 12px; {POP}; font-size: 14px; font-weight: 500; line-height: 1.4; color: rgba(255,255,255,0.9); padding: 0 14px">{P2SUB}</div></div>
+<img src="{U("ESF")}" alt="{ALT_ESF}" style="position: absolute; left: 60px; bottom: 48px; width: 420px; height: 262px; object-fit: cover; border-radius: 16px">'''
+    return box(BLUE, inner)
+
+
+def p2_t7(k):
+    """T7 (ref. Do I really need a website?): título grande em cima à esquerda + objeto no canto de baixo; creme."""
+    a, b = P2T[k]
+    inner = f'''<div style="position: absolute; left: 44px; top: 40px; {POP}; font-size: 12px; font-weight: 600; letter-spacing: 3px; color: {BLUE}">RECEITECH</div>
+<div style="position: absolute; left: 44px; right: 44px; top: 70px; {POP}; color: {NAVY}; font-size: 40px; font-weight: 700; line-height: 1.08; letter-spacing: -1.4px">{a} <span style="{SERIF}; font-style: italic; font-weight: 400; font-size: 46px; letter-spacing: -0.4px; color: {BLUE}">{b}</span></div>
+<div style="position: absolute; left: 44px; width: 210px; bottom: 50px; {POP}; font-size: 15px; font-weight: 500; line-height: 1.4; color: {NAVY}">{P2SUB}</div>
+<img src="{U("ESF")}" alt="{ALT_ESF}" style="position: absolute; right: 40px; bottom: 44px; width: 236px; height: 236px; object-fit: cover; border-radius: 16px">'''
+    return box(CREAM, inner)
+
+
+def p2_s2():
+    inner = f'''<div style="position: absolute; left: 44px; right: 44px; top: 46px; color: #FFFFFF; font-size: 27px; font-weight: 600; line-height: 1.16; letter-spacing: -0.8px; text-wrap: balance">{P2S2}</div>
+<div style="position: absolute; left: 50%; top: 178px; transform: translateX(-50%)">{phone(resumo_screen(), 510)}</div>
+<img src="{U("LOGOW")}" alt="receitech" style="position: absolute; right: 44px; bottom: 26px; height: 20px; width: auto">'''
+    return box(NAVY, inner)
+
+
+SLIDES26P2 = [
+    ("D26_P2_T1d", "26/11 · P2 · tela 1 · 6.1 (T9)", lambda: p2_t9("d")),
+    ("D26_P2_T1e", "26/11 · P2 · tela 1 · 6.2 (T9)", lambda: p2_t9("e")),
+    ("D26_P2_T1f", "26/11 · P2 · tela 1 · 6.3 (T9)", lambda: p2_t9("f")),
+    ("D26_P2_T1t7", "26/11 · P2 · tela 1 · 6.4 layout T7 (frase 6.1)", lambda: p2_t7("d")),
+    ("D26_P2_S2", "26/11 · P2 · tela 2 (Resumo)", p2_s2),
+]
+if __name__ == "__main__" and os.environ.get("P2V"):
+    emit(SLIDES26P2)
