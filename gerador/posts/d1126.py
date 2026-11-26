@@ -257,3 +257,56 @@ SLIDES26P2F = [
 ]
 if __name__ == "__main__" and os.environ.get("P2F"):
     emit(SLIDES26P2F)
+
+
+# ================= Post 2 · rodada 3 (Luana 26/11: frase 7.1; celular no meio, grande, cortado embaixo;
+# foto do banco ainda não usada, nada de esfiha; nada de "lado a lado", seguir as referências) =================
+IMGS["CESTA"] = "natal_cesta_1.jpg"
+IMGS["BROW"] = "doce_brownie_1.jpg"
+BLOBS["CESTA"] = os.environ.get("BLOB_CESTA", "/_blob/PENDENTE")
+BLOBS["BROW"] = os.environ.get("BLOB_BROW", "/_blob/PENDENTE")
+ALT_CESTA = "Cesta de Natal com laço vermelho, panetone, biscoitos de Natal, doce de leite e castanhas embalados"
+ALT_BROW = "Brownie recheado com cobertura de chocolate, creme branco e morango"
+A71, B71 = P2T["d"]
+
+
+def p2_t9b(photo="CESTA", alt=ALT_CESTA, pos="50% 55%"):
+    """T9 (ref. according to my calculations): pergunta grande em itálico, linha menor, celular grande no meio
+    cortado embaixo; a foto entra reta por cima do canto de baixo do celular, como alguém colaria."""
+    inner = f'''<div style="position: absolute; left: 40px; right: 40px; top: 52px; text-align: center; color: #FFFFFF">
+<div style="{SERIF}; font-style: italic; font-size: 58px; line-height: 0.98; letter-spacing: -0.6px">{A71}</div>
+<div style="margin-top: 14px; {POP}; font-size: 19px; font-weight: 600; letter-spacing: -0.3px">{B71}</div></div>
+<div style="position: absolute; left: 50%; margin-left: -140px; top: 252px">{phone(resumo_screen(), 600)}</div>
+'''
+    return box(BLUE, inner)
+
+
+def p2_t9c(photo="CESTA", alt=ALT_CESTA, pos="50% 82%"):
+    """T9 com a foto atrás: a foto entra reta, larga, atrás do celular; o celular grande no meio, cortado embaixo."""
+    inner = f'''<div style="position: absolute; left: 40px; right: 40px; top: 46px; text-align: center; color: #FFFFFF">
+<div style="{SERIF}; font-style: italic; font-size: 54px; line-height: 0.98; letter-spacing: -0.6px">{A71}</div>
+<div style="margin-top: 12px; {POP}; font-size: 18px; font-weight: 600; letter-spacing: -0.3px">{B71}</div></div>
+<img src="{U(photo)}" alt="{alt}" style="position: absolute; left: 40px; right: 40px; top: 232px; width: 460px; height: 300px; object-fit: cover; object-position: {pos}; border-radius: 18px">
+<div style="position: absolute; left: 50%; margin-left: -131px; top: 342px">{phone(resumo_screen(), 560)}</div>'''
+    return box(BLUE, inner)
+
+
+def p2_n12(photo="CESTA", alt=ALT_CESTA, pos="50% 50%"):
+    """N12 (ref. my summer non-negotiables): foto de fundo escurecida, texto em cima, celular no centro cortado embaixo."""
+    inner = f'''<img src="{U(photo)}" alt="{alt}" style="position: absolute; left: 0; top: 0; width: {PW}px; height: {PH}px; object-fit: cover; object-position: {pos}">
+<div style="position: absolute; inset: 0; background: rgba(16,24,40,0.42)"></div>
+<div style="position: absolute; left: 30px; right: 30px; top: 50px; text-align: center; color: #FFFFFF; line-height: 1.02">
+<div style="{POP}; font-size: 34px; font-weight: 600; letter-spacing: -1.2px">Seu negócio está</div>
+<div style="{SERIF}; font-style: italic; font-size: 60px">saudável?</div>
+<div style="margin-top: 10px; {POP}; font-size: 17px; font-weight: 600">{B71}</div></div>
+<div style="position: absolute; left: 50%; margin-left: -127px; top: 262px">{phone(resumo_screen(), 550)}</div>'''
+    return box(NAVY, inner)
+
+
+SLIDES26P2R3 = [
+    ("D26_P2_G1", "26/11 · P2 · 8.1 (T9, foto atrás do celular)", lambda: p2_t9c()),
+    ("D26_P2_G2", "26/11 · P2 · 8.2 (N12, cesta de Natal no fundo)", lambda: p2_n12()),
+    ("D26_P2_G3", "26/11 · P2 · 8.3 (N12, brownie recheado no fundo)", lambda: p2_n12("BROW", ALT_BROW, "30% 50%")),
+]
+if __name__ == "__main__" and os.environ.get("P2R3"):
+    emit(SLIDES26P2R3)
