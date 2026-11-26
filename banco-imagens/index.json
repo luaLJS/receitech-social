@@ -608,6 +608,22 @@
      "post": "P2 precificação por foto (tela 1)"
     }
    ]
+  },
+  {
+   "arquivo": "banco-imagens/natal_cupcake_1.jpg",
+   "categoria": "natal",
+   "produto": "caixa aberta com 4 cupcakes de Natal decorados (Papai Noel, Feliz Natal, árvore, roupa do Papai Noel)",
+   "fonte": "luanacake.com.br (Google Imagens, 26/11; sem marca visível)",
+   "tamanho": [
+    1280,
+    1280
+   ],
+   "usos": [
+    {
+     "data": "2026-11-26",
+     "post": "P1 Caixa (entradas e saídas)"
+    }
+   ]
   }
  ]
 }
