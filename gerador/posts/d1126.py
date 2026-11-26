@@ -234,3 +234,26 @@ SLIDES26P2 = [
 ]
 if __name__ == "__main__" and os.environ.get("P2V"):
     emit(SLIDES26P2)
+
+
+# ================= Post 2 refeito como FOTO ÚNICA (Luana 26/11: o dia é 1 carrossel + 1 foto única) =================
+def p2_single(k):
+    """T9 azul: pergunta grande em serifa itálica + resposta; celular à esquerda e foto à direita
+    (invertido em relação ao P1 de 25/11, que fica logo abaixo no grid: foto à esquerda, celular à direita)."""
+    a, b = P2T[k]
+    inner = f'''<div style="position: absolute; left: 36px; right: 36px; top: 40px; text-align: center; color: #FFFFFF">
+<div style="{SERIF}; font-style: italic; font-size: {48 if k != "e" else 44}px; line-height: 1.0; letter-spacing: -0.5px; text-wrap: balance">{a}</div>
+<div style="margin-top: 12px; {POP}; font-size: 19px; font-weight: 600; letter-spacing: -0.3px; text-wrap: balance">{b}</div></div>
+<div style="position: absolute; left: 40px; top: {222 if k != "e" else 236}px">{phone(resumo_screen(), 452)}</div>
+<img src="{U("ESF")}" alt="{ALT_ESF}" style="position: absolute; right: 36px; bottom: 150px; width: 238px; height: 238px; object-fit: cover; border-radius: 16px">
+<div style="position: absolute; right: 36px; width: 238px; bottom: 44px; {POP}; font-size: 13px; font-weight: 500; line-height: 1.4; color: #FFFFFF">{P2SUB}</div>'''
+    return box(BLUE, inner)
+
+
+SLIDES26P2F = [
+    ("D26_P2_F1", "26/11 · P2 · foto única · 7.1", lambda: p2_single("d")),
+    ("D26_P2_F2", "26/11 · P2 · foto única · 7.2", lambda: p2_single("e")),
+    ("D26_P2_F3", "26/11 · P2 · foto única · 7.3", lambda: p2_single("f")),
+]
+if __name__ == "__main__" and os.environ.get("P2F"):
+    emit(SLIDES26P2F)
