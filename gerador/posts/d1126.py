@@ -350,3 +350,32 @@ SLIDES26P2R4 = [
 ]
 if __name__ == "__main__" and os.environ.get("P2R4"):
     emit(SLIDES26P2R4)
+
+
+# ================= Post 2 · rodada 5 (Luana 26/11: "scrapbook não tem borda branca nas fotos") =================
+def scrap2(k, x, y, d, rot, shape, pos="50% 50%"):
+    rad = "50%" if shape == "circle" else "24px"
+    return (f'<img src="{U(k)}" alt="{ALTS4[k]}" style="position: absolute; left: {x}px; top: {y}px; width: {d}px; height: {d}px; '
+            f'object-fit: cover; object-position: {pos}; border-radius: {rad}; transform: rotate({rot}deg); '
+            f'box-shadow: 0 8px 18px rgba(16,24,40,0.22)">')
+
+
+def p2_scrap2(shape="rounded", bg=None, fg="#FFFFFF"):
+    bg = bg or BLUE
+    photos = (scrap2("NAKED", 356, 240, 160, 9, shape) +
+              scrap2("TRONCO", 20, 376, 150, -10, shape, "45% 50%") +
+              scrap2("CHEESE", 372, 526, 142, -6, shape, "45% 62%"))
+    inner = f'''<div style="position: absolute; left: 40px; right: 40px; top: 46px; text-align: center; color: {fg}">
+<div style="{SERIF}; font-style: italic; font-size: 56px; line-height: 0.98; letter-spacing: -0.6px">{A71}</div>
+<div style="margin-top: 12px; {POP}; font-size: 18px; font-weight: 600; letter-spacing: -0.3px">{B71}</div></div>
+<div style="position: absolute; left: 50%; margin-left: -140px; top: 236px">{phone(resumo_screen(), 600)}</div>
+{photos}'''
+    return box(bg, inner)
+
+
+SLIDES26P2R5 = [
+    ("D26_P2_J1", "26/11 · P2 · 10.1 (scrapbook sem borda, cantos arredondados)", lambda: p2_scrap2("rounded")),
+    ("D26_P2_J2", "26/11 · P2 · 10.2 (scrapbook sem borda, redondas)", lambda: p2_scrap2("circle")),
+]
+if __name__ == "__main__" and os.environ.get("P2R5"):
+    emit(SLIDES26P2R5)
