@@ -379,3 +379,30 @@ SLIDES26P2R5 = [
 ]
 if __name__ == "__main__" and os.environ.get("P2R5"):
     emit(SLIDES26P2R5)
+
+
+# ================= Post 2 · rodada 6 (Luana 26/11: fotos FORA do celular, celular um pouco menor;
+# trocar a foto da esquerda, o tronco de Natal não dá pra ver o que é) =================
+IMGS["PALHA"] = "doce_palha_1.jpg"
+BLOBS["PALHA"] = os.environ.get("BLOB_PALHA", "/_blob/PENDENTE")
+ALTS4["PALHA"] = "Pedaços de palha italiana de chocolate com biscoito, passados no açúcar"
+
+
+def p2_scrap3(shape="rounded"):
+    photos = (scrap2("NAKED", 406, 262, 120, 9, shape) +
+              scrap2("PALHA", 14, 400, 122, -10, shape, "40% 45%") +
+              scrap2("CHEESE", 408, 540, 116, -7, shape, "45% 62%"))
+    inner = f'''<div style="position: absolute; left: 40px; right: 40px; top: 46px; text-align: center; color: #FFFFFF">
+<div style="{SERIF}; font-style: italic; font-size: 56px; line-height: 0.98; letter-spacing: -0.6px">{A71}</div>
+<div style="margin-top: 12px; {POP}; font-size: 18px; font-weight: 600; letter-spacing: -0.3px">{B71}</div></div>
+<div style="position: absolute; left: 50%; margin-left: -118.6px; top: 254px">{phone(resumo_screen(), 500)}</div>
+{photos}'''
+    return box(BLUE, inner)
+
+
+SLIDES26P2R6 = [
+    ("D26_P2_K1", "26/11 · P2 · 11.1 (scrapbook, fotos fora do celular, cantos arredondados)", lambda: p2_scrap3("rounded")),
+    ("D26_P2_K2", "26/11 · P2 · 11.2 (scrapbook, fotos fora do celular, redondas)", lambda: p2_scrap3("circle")),
+]
+if __name__ == "__main__" and os.environ.get("P2R6"):
+    emit(SLIDES26P2R6)
