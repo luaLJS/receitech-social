@@ -310,3 +310,43 @@ SLIDES26P2R3 = [
 ]
 if __name__ == "__main__" and os.environ.get("P2R3"):
     emit(SLIDES26P2R3)
+
+
+# ================= Post 2 · rodada 4 (Luana 26/11: "parece que um computador fez"; 3 fotos redondas,
+# meio giradas, em volta do celular, tipo scrapbook) =================
+for _k, _f, _alt in [("NAKED", "doce_nakedcake_1.jpg", "Naked cake com morangos, uvas e mirtilos"),
+                     ("TRONCO", "natal_tronco_1.jpg", "Tronco de Natal de chocolate com folhinhas verdes"),
+                     ("CHEESE", "doce_cheesecake_1.jpg", "Fatia de cheesecake com calda de frutas vermelhas")]:
+    IMGS[_k] = _f
+    BLOBS[_k] = os.environ.get("BLOB_" + _k, "/_blob/PENDENTE")
+ALTS4 = {"NAKED": "Naked cake com morangos, uvas e mirtilos", "TRONCO": "Tronco de Natal de chocolate com folhinhas verdes",
+         "CHEESE": "Fatia de cheesecake com calda de frutas vermelhas"}
+
+
+def scrap(k, x, y, d, rot, shape, pos="50% 50%"):
+    rad = "50%" if shape == "circle" else "26px"
+    return (f'<div style="position: absolute; left: {x}px; top: {y}px; width: {d}px; height: {d}px; transform: rotate({rot}deg); '
+            f'border-radius: {rad}; background: #FFFFFF; padding: 6px; box-sizing: border-box; box-shadow: 0 8px 18px rgba(16,24,40,0.22)">'
+            f'<img src="{U(k)}" alt="{ALTS4[k]}" style="width: 100%; height: 100%; object-fit: cover; object-position: {pos}; border-radius: {rad}; display: block"></div>')
+
+
+def p2_scrap(shape="circle", bg=None, fg="#FFFFFF"):
+    bg = bg or BLUE
+    photos = (scrap("NAKED", 352, 236, 168, 9, shape) +
+              scrap("TRONCO", 14, 372, 158, -10, shape, "45% 50%") +
+              scrap("CHEESE", 368, 520, 150, -6, shape, "45% 62%"))
+    inner = f'''<div style="position: absolute; left: 40px; right: 40px; top: 46px; text-align: center; color: {fg}">
+<div style="{SERIF}; font-style: italic; font-size: 56px; line-height: 0.98; letter-spacing: -0.6px">{A71}</div>
+<div style="margin-top: 12px; {POP}; font-size: 18px; font-weight: 600; letter-spacing: -0.3px">{B71}</div></div>
+<div style="position: absolute; left: 50%; margin-left: -140px; top: 236px">{phone(resumo_screen(), 600)}</div>
+{photos}'''
+    return box(bg, inner)
+
+
+SLIDES26P2R4 = [
+    ("D26_P2_H1", "26/11 · P2 · 9.1 (scrapbook, fotos redondas, azul)", lambda: p2_scrap("circle")),
+    ("D26_P2_H2", "26/11 · P2 · 9.2 (scrapbook, cantos arredondados, azul)", lambda: p2_scrap("rounded")),
+    ("D26_P2_H3", "26/11 · P2 · 9.3 (scrapbook, fotos redondas, creme)", lambda: p2_scrap("circle", CREAM, NAVY)),
+]
+if __name__ == "__main__" and os.environ.get("P2R4"):
+    emit(SLIDES26P2R4)
